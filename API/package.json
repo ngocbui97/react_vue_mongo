@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "build by ngoccoder",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngocbui97/react_vue_mongo.git"
+  },
+  "author": "ngocbn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngocbui97/react_vue_mongo/issues"
+  },
+  "homepage": "https://github.com/ngocbui97/react_vue_mongo#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.3",
+    "nodemailer": "^6.4.5",
+    "q": "^1.5.1",
+    "rand-token": "^0.4.0",
+    "restify": "^8.5.1"
+  }
+}

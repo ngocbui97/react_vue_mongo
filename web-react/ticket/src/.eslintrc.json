@@ -1,0 +1,27 @@
+{
+    "parser": "babel-eslint",
+    "rules": {
+        "prettier/prettier": ["error", {
+           "endOfLine":"auto"
+         }],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "lines-around-comment": [
+            "error",
+            {
+              "beforeBlockComment": true
+            }
+          ],
+          "comma-dangle": ["error", "never"]
+    },
+    "plugins": ["prettier"],
+    "extends": [ "prettier/react"],
+    "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": 9
+      }
+}

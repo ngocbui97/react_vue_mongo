@@ -1,0 +1,23 @@
+2020-08-31 21:40:42.7536 INFO MoveNext
+2020-08-31 21:40:44.4447 ERROR Value cannot be null. (Parameter 'connectionString')
+2020-08-31 21:58:58.1820 INFO MoveNext
+2020-08-31 21:59:05.5734 ERROR Value cannot be null. (Parameter 'connectionString')
+2020-08-31 22:01:29.2070 INFO MoveNext
+2020-08-31 22:01:29.4092 ERROR Value cannot be null. (Parameter 'connectionString')
+2020-08-31 22:07:29.2104 INFO MoveNext
+2020-08-31 22:07:35.1220 ERROR Invalid object name 'Users'.
+2020-08-31 22:08:06.3731 INFO MoveNext
+2020-08-31 22:09:03.4759 ERROR Invalid object name 'Users'.
+2020-08-31 22:49:21.4320 INFO MoveNext
+2020-08-31 22:49:25.2731 ERROR Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserModel -> User
+TiketAPI.Models.UserModel -> Repository.EF.User
+2020-08-31 22:53:42.7071 INFO MoveNext
+2020-08-31 22:54:31.6759 ERROR Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserModel -> User
+TiketAPI.Models.UserModel -> Repository.EF.User
+2020-08-31 23:23:22.5917 INFO MoveNext
