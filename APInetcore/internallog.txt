@@ -2708,3 +2708,549 @@
 2020-09-02 09:34:06.9626 Debug Creating file appender: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-02_logfile.txt
 2020-09-02 09:34:07.0082 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-02_logfile.txt with allowFileSharedWriting=False
 2020-09-02 09:34:38.4212 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-02_logfile.txt with allowFileSharedWriting=False
+2020-09-10 20:51:51.8538 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 20:51:52.7376 Debug Found assembly location directory: 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-09-10 20:51:52.7937 Debug Search for auto loading files in location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 20:51:52.9164 Debug Start auto loading, location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 20:51:52.9875 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 20:51:53.0405 Info Loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 20:51:53.6154 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.4.1366. Product version: 1.6.4. GlobalAssemblyCache: False
+2020-09-10 20:51:53.6360 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 20:51:53.6607 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-09-10 20:51:53.6825 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 20:51:53.7292 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 20:51:53.7465 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-09-10 20:51:53.7630 Debug Auto loading done
+2020-09-10 20:51:53.8007 Info Message Template Auto Format enabled
+2020-09-10 20:51:53.9470 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:53.9737 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 20:51:54.1107 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 20:51:54.1296 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 20:51:54.1432 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.1576 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:54.1710 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.1875 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 20:51:54.2064 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 20:51:54.2189 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 20:51:54.2315 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:54.2475 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:54.2607 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.2607 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-09-10 20:51:54.2826 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.2932 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 20:51:54.3136 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-09-10 20:51:54.3272 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 20:51:54.3425 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.3610 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 20:51:54.3778 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 20:51:54.3943 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.4137 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 20:51:54.4256 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 20:51:54.4351 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 20:51:54.4351 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.4539 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:54.4675 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.4792 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 20:51:54.4792 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 20:51:54.5075 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 20:51:54.5183 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:54.5285 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:54.5411 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:54.5411 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 20:51:54.5700 Info Adding target FileTarget(Name=logfile)
+2020-09-10 20:51:54.5899 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-09-10 20:51:54.6078 Trace ParseRulesElement
+2020-09-10 20:51:54.6700 Debug Watching path 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI' filter 'nlog.config' for changes.
+2020-09-10 20:51:54.6847 Debug --- NLog configuration dump ---
+2020-09-10 20:51:54.7011 Debug Targets:
+2020-09-10 20:51:54.7349 Debug File Target[logfile]
+2020-09-10 20:51:54.7575 Debug Rules:
+2020-09-10 20:51:54.7705 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-09-10 20:51:54.7800 Debug --- End of NLog configuration dump ---
+2020-09-10 20:51:54.7940 Trace FindReachableObject<System.Object>:
+2020-09-10 20:51:54.7940 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-09-10 20:51:54.8164 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-09-10 20:51:54.8260 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-09-10 20:51:54.8260 Trace   Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 20:51:54.8449 Trace   Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 20:51:54.8546 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:54.8546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:54.8768 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 20:51:54.8904 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:54.9293 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 20:51:54.9438 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 20:51:54.9541 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:54.9644 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 20:51:54.9644 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:54.9855 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 20:51:54.9986 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 20:51:55.0093 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 20:51:55.0093 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:55.0277 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:55.0277 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:55.0474 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 20:51:55.0620 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 20:51:55.0740 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-09-10 20:51:55.0872 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-09-10 20:51:55.1076 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI/nlog.config
+2020-09-10 20:51:55.1233 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-09-10 20:51:55.1827 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-09-10 20:51:55.1827 Trace Initializing Layout Renderer: ${message}
+2020-09-10 20:51:55.2040 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 20:51:55.2176 Trace Initializing Layout Renderer: ${level}
+2020-09-10 20:51:55.2297 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-09-10 20:51:55.2514 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:55.2616 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 20:51:55.2616 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:55.2837 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:55.2981 Trace Initializing Layout Renderer: ${uppercase}
+2020-09-10 20:51:55.3080 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 20:51:55.3217 Trace Initializing Layout Renderer: ${longdate}
+2020-09-10 20:51:55.3217 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 20:51:55.3465 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:55.3570 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 20:51:55.3687 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:55.3687 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 20:51:55.3933 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:55.4053 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 20:51:55.4163 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 20:51:55.4163 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 20:51:55.4374 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:55.4478 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 20:51:55.4478 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:55.4669 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 20:51:55.5128 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 20:51:55.5128 Trace Initializing Layout Renderer: ${shortdate}
+2020-09-10 20:51:55.5525 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 20:51:55.5737 Trace Initializing 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 20:51:55.5737 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 20:51:55.5960 Trace Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 20:51:55.6111 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 20:51:55.6271 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:55.6377 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 20:51:55.6377 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 20:51:55.6578 Trace Initializing File Target[logfile]
+2020-09-10 20:51:55.6773 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-09-10 20:51:55.6923 Trace Scanning FileTarget 'File Target[logfile]'
+2020-09-10 20:51:55.7332 Trace  Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 20:51:55.7554 Trace  Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 20:51:55.7902 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 20:51:55.8085 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 20:51:55.8282 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 20:51:55.8473 Trace File Target[logfile] has 2 layouts
+2020-09-10 20:51:55.8819 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-09-10 22:21:34.9785 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 22:21:35.4195 Debug Found assembly location directory: 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-09-10 22:21:35.4431 Debug Search for auto loading files in location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 22:21:35.4720 Debug Start auto loading, location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 22:21:35.4860 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 22:21:35.5005 Info Loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 22:21:35.6684 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.4.1366. Product version: 1.6.4. GlobalAssemblyCache: False
+2020-09-10 22:21:35.6684 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 22:21:35.6901 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-09-10 22:21:35.7016 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 22:21:35.7122 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 22:21:35.7122 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-09-10 22:21:35.7308 Debug Auto loading done
+2020-09-10 22:21:35.7460 Info Message Template Auto Format enabled
+2020-09-10 22:21:35.8147 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:35.8381 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 22:21:35.8587 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 22:21:35.8711 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 22:21:35.8711 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:35.8898 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:35.9026 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:35.9026 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 22:21:35.9288 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 22:21:35.9441 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 22:21:35.9633 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:35.9896 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:36.0012 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.0106 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-09-10 22:21:36.0106 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.0317 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 22:21:36.0560 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-09-10 22:21:36.0560 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 22:21:36.0836 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.0986 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 22:21:36.1122 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 22:21:36.1241 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.1351 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 22:21:36.1351 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 22:21:36.1676 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 22:21:36.1917 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.2017 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:36.2138 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.2138 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 22:21:36.2325 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 22:21:36.2325 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 22:21:36.2520 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:36.2613 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:36.2758 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.2758 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 22:21:36.2950 Info Adding target FileTarget(Name=logfile)
+2020-09-10 22:21:36.3093 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-09-10 22:21:36.3214 Trace ParseRulesElement
+2020-09-10 22:21:36.3758 Debug Watching path 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI' filter 'nlog.config' for changes.
+2020-09-10 22:21:36.3957 Debug --- NLog configuration dump ---
+2020-09-10 22:21:36.4150 Debug Targets:
+2020-09-10 22:21:36.4352 Debug File Target[logfile]
+2020-09-10 22:21:36.4496 Debug Rules:
+2020-09-10 22:21:36.4688 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-09-10 22:21:36.4864 Debug --- End of NLog configuration dump ---
+2020-09-10 22:21:36.5184 Trace FindReachableObject<System.Object>:
+2020-09-10 22:21:36.5349 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-09-10 22:21:36.5510 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-09-10 22:21:36.5677 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-09-10 22:21:36.5860 Trace   Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 22:21:36.6011 Trace   Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 22:21:36.6172 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:36.6283 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:36.6404 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 22:21:36.6515 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:36.6515 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 22:21:36.6799 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 22:21:36.6960 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:36.6960 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 22:21:36.7265 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:36.7265 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 22:21:36.7496 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 22:21:36.7588 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 22:21:36.7588 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:36.7793 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:36.7933 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:36.8110 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 22:21:36.8232 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 22:21:36.8412 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-09-10 22:21:36.8536 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-09-10 22:21:36.8715 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI/nlog.config
+2020-09-10 22:21:36.8855 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-09-10 22:21:36.9078 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-09-10 22:21:36.9178 Trace Initializing Layout Renderer: ${message}
+2020-09-10 22:21:36.9178 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 22:21:36.9385 Trace Initializing Layout Renderer: ${level}
+2020-09-10 22:21:36.9492 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-09-10 22:21:36.9658 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:36.9658 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 22:21:36.9859 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:36.9960 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:37.0210 Trace Initializing Layout Renderer: ${uppercase}
+2020-09-10 22:21:37.0421 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 22:21:37.0620 Trace Initializing Layout Renderer: ${longdate}
+2020-09-10 22:21:37.0741 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 22:21:37.0875 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:37.0875 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 22:21:37.1092 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:37.1202 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 22:21:37.1202 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:37.1387 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 22:21:37.1387 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 22:21:37.1586 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 22:21:37.1711 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:37.1810 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 22:21:37.1952 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:37.2112 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 22:21:37.2285 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 22:21:37.2486 Trace Initializing Layout Renderer: ${shortdate}
+2020-09-10 22:21:37.2609 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 22:21:37.2609 Trace Initializing 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 22:21:37.2807 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 22:21:37.2901 Trace Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 22:21:37.2901 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 22:21:37.3111 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:37.3111 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 22:21:37.3296 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 22:21:37.3399 Trace Initializing File Target[logfile]
+2020-09-10 22:21:37.3576 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-09-10 22:21:37.3690 Trace Scanning FileTarget 'File Target[logfile]'
+2020-09-10 22:21:37.3690 Trace  Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 22:21:37.3913 Trace  Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 22:21:37.4044 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 22:21:37.4145 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 22:21:37.4145 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 22:21:37.4441 Trace File Target[logfile] has 2 layouts
+2020-09-10 22:21:37.4570 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-09-10 22:34:45.6641 Debug Targets for TiketAPI.Services.LoggerService by level:
+2020-09-10 22:34:45.6910 Debug Trace =>
+2020-09-10 22:34:45.7159 Debug Debug => logfile
+2020-09-10 22:34:45.7418 Debug Info => logfile
+2020-09-10 22:34:45.7540 Debug Warn => logfile
+2020-09-10 22:34:45.7635 Debug Error => logfile
+2020-09-10 22:34:45.7744 Debug Fatal => logfile
+2020-09-10 22:34:45.9361 Debug FileTarget(Name=logfile): Preparing for new file 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt'
+2020-09-10 22:34:46.0026 Debug Creating file appender: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt
+2020-09-10 22:34:46.0255 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt with allowFileSharedWriting=False
+2020-09-10 22:35:09.8634 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt with allowFileSharedWriting=False
+2020-09-10 22:39:52.5977 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt with allowFileSharedWriting=False
+2020-09-10 23:17:43.5705 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 23:17:43.9221 Debug Found assembly location directory: 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-09-10 23:17:43.9398 Debug Search for auto loading files in location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 23:17:43.9692 Debug Start auto loading, location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 23:17:43.9940 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 23:17:44.0091 Info Loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 23:17:44.0879 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.4.1366. Product version: 1.6.4. GlobalAssemblyCache: False
+2020-09-10 23:17:44.1025 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 23:17:44.1196 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-09-10 23:17:44.1196 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 23:17:44.1436 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 23:17:44.1564 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-09-10 23:17:44.1668 Debug Auto loading done
+2020-09-10 23:17:44.1668 Info Message Template Auto Format enabled
+2020-09-10 23:17:44.2331 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.2532 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:17:44.2877 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 23:17:44.3026 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 23:17:44.3120 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.3215 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:44.3215 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.3450 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:17:44.3631 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:17:44.3757 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:17:44.3881 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:44.4080 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:44.4191 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.4191 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-09-10 23:17:44.4386 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.4477 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:17:44.4803 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-09-10 23:17:44.4945 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 23:17:44.4945 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.5196 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:17:44.5358 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 23:17:44.5481 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.5667 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:17:44.5885 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 23:17:44.5885 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 23:17:44.6131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.6245 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:44.6397 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.6517 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:17:44.6669 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:17:44.6870 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:17:44.7050 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:44.7169 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:44.7311 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:44.7428 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:17:44.7428 Info Adding target FileTarget(Name=logfile)
+2020-09-10 23:17:44.7705 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-09-10 23:17:44.7821 Trace ParseRulesElement
+2020-09-10 23:17:44.8411 Debug Watching path 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI' filter 'nlog.config' for changes.
+2020-09-10 23:17:44.8565 Debug --- NLog configuration dump ---
+2020-09-10 23:17:44.8694 Debug Targets:
+2020-09-10 23:17:44.8868 Debug File Target[logfile]
+2020-09-10 23:17:44.9085 Debug Rules:
+2020-09-10 23:17:44.9379 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-09-10 23:17:44.9535 Debug --- End of NLog configuration dump ---
+2020-09-10 23:17:44.9751 Trace FindReachableObject<System.Object>:
+2020-09-10 23:17:44.9884 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-09-10 23:17:45.0007 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-09-10 23:17:45.0118 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-09-10 23:17:45.0118 Trace   Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 23:17:45.0318 Trace   Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:17:45.0439 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.0439 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.0626 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:17:45.0719 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.0899 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 23:17:45.1073 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:17:45.1230 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.1375 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:17:45.1517 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.1517 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:17:45.1726 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:17:45.1822 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:17:45.1822 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.2019 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:45.2125 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.2125 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:17:45.2323 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 23:17:45.2439 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-09-10 23:17:45.2439 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-09-10 23:17:45.2700 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI/nlog.config
+2020-09-10 23:17:45.2889 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-09-10 23:17:45.3242 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-09-10 23:17:45.3373 Trace Initializing Layout Renderer: ${message}
+2020-09-10 23:17:45.3373 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:17:45.3577 Trace Initializing Layout Renderer: ${level}
+2020-09-10 23:17:45.3577 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-09-10 23:17:45.3837 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:45.3837 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:17:45.4034 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.4034 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:45.4287 Trace Initializing Layout Renderer: ${uppercase}
+2020-09-10 23:17:45.4410 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:17:45.4536 Trace Initializing Layout Renderer: ${longdate}
+2020-09-10 23:17:45.4697 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 23:17:45.4839 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:45.4944 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:17:45.5080 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.5080 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:17:45.5397 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.5397 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:17:45.5630 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:17:45.5760 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:17:45.5879 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.5879 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:17:45.6101 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.6216 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:17:45.6340 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:17:45.6340 Trace Initializing Layout Renderer: ${shortdate}
+2020-09-10 23:17:45.6605 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:17:45.6714 Trace Initializing 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 23:17:45.6806 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:17:45.6806 Trace Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:17:45.7009 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:17:45.7169 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.7304 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:17:45.7427 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:17:45.7603 Trace Initializing File Target[logfile]
+2020-09-10 23:17:45.7777 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-09-10 23:17:45.7907 Trace Scanning FileTarget 'File Target[logfile]'
+2020-09-10 23:17:45.7907 Trace  Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 23:17:45.8134 Trace  Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:17:45.8296 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 23:17:45.8431 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:17:45.8535 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 23:17:45.8535 Trace File Target[logfile] has 2 layouts
+2020-09-10 23:17:45.8744 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-09-10 23:18:27.9155 Debug Targets for TiketAPI.Services.LoggerService by level:
+2020-09-10 23:18:27.9155 Debug Trace =>
+2020-09-10 23:18:27.9404 Debug Debug => logfile
+2020-09-10 23:18:27.9583 Debug Info => logfile
+2020-09-10 23:18:27.9753 Debug Warn => logfile
+2020-09-10 23:18:27.9926 Debug Error => logfile
+2020-09-10 23:18:28.0220 Debug Fatal => logfile
+2020-09-10 23:18:28.1111 Debug FileTarget(Name=logfile): Preparing for new file 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt'
+2020-09-10 23:18:28.1373 Debug Creating file appender: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt
+2020-09-10 23:18:28.1528 Trace Opening D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\2020-09-10_logfile.txt with allowFileSharedWriting=False
+2020-09-10 23:23:59.1896 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 23:23:59.6018 Debug Found assembly location directory: 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-09-10 23:23:59.6217 Debug Search for auto loading files in location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 23:23:59.6560 Debug Start auto loading, location: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1
+2020-09-10 23:23:59.6743 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 23:23:59.6980 Info Loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-09-10 23:23:59.7484 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.4.1366. Product version: 1.6.4. GlobalAssemblyCache: False
+2020-09-10 23:23:59.7690 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-09-10 23:23:59.7917 Info Auto loading assembly file: D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-09-10 23:23:59.8137 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 23:23:59.8305 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-09-10 23:23:59.8481 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-09-10 23:23:59.8624 Debug Auto loading done
+2020-09-10 23:23:59.8803 Info Message Template Auto Format enabled
+2020-09-10 23:23:59.9555 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:23:59.9881 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:24:00.0394 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 23:24:00.0682 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 23:24:00.0957 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.1211 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:00.1386 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.1696 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:24:00.2009 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:24:00.2232 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:24:00.2456 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:00.2681 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:00.2801 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.2909 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-09-10 23:24:00.2909 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.3312 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:24:00.3707 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-09-10 23:24:00.3927 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 23:24:00.4175 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.4363 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:24:00.4558 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 23:24:00.4726 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.4871 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:24:00.5037 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-09-10 23:24:00.5195 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-09-10 23:24:00.5391 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.5727 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:00.6007 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.6188 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:24:00.6352 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:24:00.6543 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:24:00.6728 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:00.6927 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:00.7163 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:00.7313 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:24:00.7583 Info Adding target FileTarget(Name=logfile)
+2020-09-10 23:24:00.7838 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-09-10 23:24:00.8028 Trace ParseRulesElement
+2020-09-10 23:24:00.8733 Debug Watching path 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI' filter 'nlog.config' for changes.
+2020-09-10 23:24:00.8876 Debug --- NLog configuration dump ---
+2020-09-10 23:24:00.9006 Debug Targets:
+2020-09-10 23:24:00.9006 Debug File Target[logfile]
+2020-09-10 23:24:00.9249 Debug Rules:
+2020-09-10 23:24:00.9429 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-09-10 23:24:00.9667 Debug --- End of NLog configuration dump ---
+2020-09-10 23:24:00.9930 Trace FindReachableObject<System.Object>:
+2020-09-10 23:24:01.0114 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-09-10 23:24:01.0300 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-09-10 23:24:01.0425 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-09-10 23:24:01.0592 Trace   Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 23:24:01.0715 Trace   Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:24:01.0867 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.0867 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.1103 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:24:01.1228 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.1351 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 23:24:01.1518 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:24:01.1733 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.1935 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:24:01.2122 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.2122 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:24:01.2382 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:24:01.2515 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:24:01.2619 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.2748 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:01.2748 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.2986 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:24:01.3090 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 23:24:01.3090 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-09-10 23:24:01.3335 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-09-10 23:24:01.3506 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\TiketAPI/nlog.config
+2020-09-10 23:24:01.3896 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-09-10 23:24:01.4233 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-09-10 23:24:01.4361 Trace Initializing Layout Renderer: ${message}
+2020-09-10 23:24:01.4506 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:24:01.4655 Trace Initializing Layout Renderer: ${level}
+2020-09-10 23:24:01.4768 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-09-10 23:24:01.4999 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:01.5168 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:24:01.5306 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.5475 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:01.5697 Trace Initializing Layout Renderer: ${uppercase}
+2020-09-10 23:24:01.5875 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:24:01.6113 Trace Initializing Layout Renderer: ${longdate}
+2020-09-10 23:24:01.6254 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-09-10 23:24:01.6374 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:01.6521 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:24:01.6521 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.6736 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-09-10 23:24:01.6897 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.6999 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-09-10 23:24:01.7114 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-09-10 23:24:01.7114 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-09-10 23:24:01.7427 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.7666 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-09-10 23:24:01.7832 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.8022 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-09-10 23:24:01.8365 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:24:01.8639 Trace Initializing Layout Renderer: ${shortdate}
+2020-09-10 23:24:01.8814 Trace Initializing Layout Renderer: ${literal}
+2020-09-10 23:24:01.8970 Trace Initializing 'D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'
+2020-09-10 23:24:01.9140 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-09-10 23:24:01.9293 Trace Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:24:01.9463 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-09-10 23:24:01.9689 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:01.9861 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-09-10 23:24:02.0027 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-09-10 23:24:02.0168 Trace Initializing File Target[logfile]
+2020-09-10 23:24:02.0394 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-09-10 23:24:02.0583 Trace Scanning FileTarget 'File Target[logfile]'
+2020-09-10 23:24:02.1060 Trace  Scanning Property FileName ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2020-09-10 23:24:02.1499 Trace  Scanning SimpleLayout ''D:\RefullAPI, node js, mongodb, pestyfi\react_vue_mongo\APInetcore\logs\${shortdate}_logfile.txt''
+2020-09-10 23:24:02.1696 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-09-10 23:24:02.1924 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-09-10 23:24:02.2148 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-09-10 23:24:02.2350 Trace File Target[logfile] has 2 layouts
+2020-09-10 23:24:02.2604 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory

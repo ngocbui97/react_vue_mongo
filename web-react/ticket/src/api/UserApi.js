@@ -1,10 +1,10 @@
 import request from '../common/request';
 
-class UserApi {
-  getAll = (params) => {
-    const url = '/products';
-    return request.get(url, { params });
-  };
-}
-const userApi = new UserApi();
-export default userApi;
+const UserAPI = {
+  signIn: (params) => {
+    const url = '/user/login';
+    return request.post(url, { params });
+  }
+};
+
+export default UserAPI;

@@ -18,5 +18,6 @@ namespace TiketAPI.Models
         public DateTime UpdatedAt { get; set; }
         public bool Active { get; set; }
         public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
     }
 }

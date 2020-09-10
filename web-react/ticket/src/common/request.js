@@ -1,11 +1,12 @@
 import axios from 'axios';
 import queryString from 'query-string';
 import LocalStorage from './localStorage';
+import * as constants from '../constants';
 
 const localStorageService = LocalStorage.getService();
 
 const request = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: constants.BASE_URL_API,
   headers: {
     'content-type': 'application/json'
   },

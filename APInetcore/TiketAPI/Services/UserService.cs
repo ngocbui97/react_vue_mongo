@@ -65,7 +65,8 @@ namespace TiketAPI.Services
                 {
                     JwtService jwt = new JwtService(_config);
                     UserLoginModel userLogin = _mapper.Map<User, UserLoginModel>(user);
-                    userLogin.AccessToken = jwt.GenerateSecurityToken(userLogin.Email);
+                    userLogin.AccessToken = jwt.GenerateSecurityToken(userLogin.Email, false);
+                    userLogin.RefreshToken = jwt.GenerateSecurityToken(userLogin.Email, true);
                     return new ResponseService<UserLoginModel>(userLogin);
                 }
                 return new ResponseService<UserLoginModel>("Wrong email or password");

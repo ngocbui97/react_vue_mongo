@@ -11,12 +11,30 @@ import { withTranslation } from 'react-i18next';
 import { showLoading, hideLoading } from '../../actions/ui';
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
+import UserAPI from '../../api/UserApi';
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { Email: '', password: '' };
   }
+  onChange = (e) => {
+    let target = e.target;
+    let name = target.name;
+    let value = target.value;
+    this.setState({ [name]: value });
+  };
+
+  signIn = () => {
+    UserAPI.signIn(this.state)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   render() {
     const { t } = this.props;
 
@@ -35,22 +53,26 @@ class Login extends Component {
               <Form.Input
                 fluid
                 icon="user"
+                name="Email"
                 iconPosition="left"
                 placeholder="E-mail address"
+                onChange={this.onChange}
               />
               <Form.Input
                 fluid
                 icon="lock"
                 iconPosition="left"
+                name="Password"
                 placeholder="Password"
                 type="password"
+                onChange={this.onChange}
               />
 
               <Button
                 color="teal"
                 fluid
                 size="large"
-                onClick={this.props.showLoading}
+                onClick={() => this.signIn()}
               >
                 Login
               </Button>

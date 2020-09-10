@@ -22,7 +22,7 @@ namespace TiketAPI.Services
             _expDate = config.GetSection("JwtConfig").GetSection("expirationInMinutes").Value;
         }
 
-        public string GenerateSecurityToken(string email)
+        public string GenerateSecurityToken(string email, Boolean isRefreshToken)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secret);
@@ -32,7 +32,7 @@ namespace TiketAPI.Services
                 {
                     new Claim(ClaimTypes.Email, email)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_expDate)),
+                Expires = !isRefreshToken ? DateTime.UtcNow.AddMinutes(double.Parse(_expDate)) : DateTime.UtcNow.AddMinutes(double.Parse(_expDate)*10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

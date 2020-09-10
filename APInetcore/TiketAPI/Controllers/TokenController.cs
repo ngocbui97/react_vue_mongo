@@ -23,7 +23,7 @@ namespace TiketAPI.Controllers
         public string GetRandomToken()
         {
             var jwt = new JwtService(_config);
-            var token = jwt.GenerateSecurityToken("fake@email.com");
+            var token = jwt.GenerateSecurityToken("fake@email.com", false);
             return token;
         }
     }
