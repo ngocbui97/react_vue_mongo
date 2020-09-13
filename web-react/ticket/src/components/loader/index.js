@@ -8,7 +8,6 @@ import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 class GlobalLoading extends Component {
   render() {
     const { showLoading } = this.props;
-    console.log(this.props);
     let xhtml = null;
     if (showLoading) {
       xhtml = (
@@ -31,7 +30,6 @@ GlobalLoading.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     showLoading: state.ui.showLoading
   };

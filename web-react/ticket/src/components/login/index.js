@@ -12,11 +12,14 @@ import { showLoading, hideLoading } from '../../actions/ui';
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 import UserAPI from '../../api/UserApi';
+import LocalStorage from '../../common/localStorage';
+
+const localStorageService = LocalStorage.getService();
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { Email: '', password: '' };
+    this.state = { Email: '', Password: '' };
   }
   onChange = (e) => {
     let target = e.target;
@@ -29,6 +32,12 @@ class Login extends Component {
     UserAPI.signIn(this.state)
       .then((res) => {
         console.log(res);
+        let token = {
+          access_token: res.accessToken,
+          refresh_token: res.refreshToken
+        };
+        localStorageService.setToken(token);
+        this.props.history.push('/');
       })
       .catch((err) => {
         console.log(err);

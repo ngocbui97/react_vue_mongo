@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import Login from './components/login/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from './routers';
 import GlobalLoading from './components/loader';
+import history from './common/history';
+
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <div className="App ui grid container">
+      <Router history={history}>
         <GlobalLoading></GlobalLoading>
-        <Login />
         <Switch>
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
@@ -24,10 +24,14 @@ function RouteWithSubRoutes(route) {
   return (
     <Route
       path={route.path}
-      render={(props) => (
-        // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
-      )}
+      key={route.path}
+      component={route.component}
+      exact={route.exact}
+      name={route.name}
+      // render={(props) => (
+      //   // pass the sub-routes down to keep nesting
+      //   <route.component {...props} routes={route.routes} />
+      // )}
     />
   );
 }

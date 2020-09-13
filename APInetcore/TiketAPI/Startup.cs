@@ -49,7 +49,7 @@ namespace TiketAPI
             services.ConfigureLoggerService();
             services.AddControllers();
             services.AddTokenAuthentication(Configuration);
-            services.ConfigureCors();
+            services.ConfigureCors(Configuration);
             services.AddScoped<ModelValidationAttribute>();
             services.AddSingleton<ILoggerManager, LoggerService>();
 
@@ -72,7 +72,7 @@ namespace TiketAPI
 
             //app.ConfigureExceptionHandler(logger);
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+            app.UseCors("AnotherPolicy");
 
             app.UseHttpsRedirection();
 

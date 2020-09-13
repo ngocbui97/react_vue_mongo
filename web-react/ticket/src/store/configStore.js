@@ -18,6 +18,7 @@ const sagaMiddleware = createSagaMiddleware();
 const configStore = () => {
   const middlewares = [sagaMiddleware];
   const enhancers = [applyMiddleware(...middlewares)];
+
   const store = createStore(rootReducer, composeEnhancers(...enhancers));
   //   sagaMiddleware.run(rootSaga);
   return store;

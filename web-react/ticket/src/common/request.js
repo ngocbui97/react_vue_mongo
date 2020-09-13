@@ -2,6 +2,7 @@ import axios from 'axios';
 import queryString from 'query-string';
 import LocalStorage from './localStorage';
 import * as constants from '../constants';
+import history from '../common/history';
 
 const localStorageService = LocalStorage.getService();
 
@@ -38,13 +39,10 @@ request.interceptors.response.use(
   (error) => {
     const originalRequest = error.config;
 
-    // if (
-    //   error.response.status === 401 &&
-    //   originalRequest.url === 'http://13.232.130.60:8081/v1/auth/token'
-    // ) {
-    //   router.push('/login');
-    //   return Promise.reject(error);
-    // }
+    if (error.response.status === 401) {
+      history.push('/login');
+      return Promise.reject(error);
+    }
 
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
