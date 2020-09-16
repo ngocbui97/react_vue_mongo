@@ -3,16 +3,16 @@ import Home from '../containers/home';
 
 const routes = [
   {
+    name: 'Page home',
+    path: '/',
+    exact: true,
+    component: Home
+  },
+  {
     name: 'Page login',
     path: '/login',
     exact: true,
     component: Login
-  },
-  {
-    name: 'Page home',
-    path: '',
-    exact: true,
-    component: Home
   }
   //   {
   //     path: '/tacos',
