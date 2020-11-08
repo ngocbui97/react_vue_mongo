@@ -12,7 +12,7 @@ class Home extends Component {
         <div className="header sixteen wide column">
           <Header></Header>
         </div>
-        <div className="sixteen wide column content"></div>
+        <div className="sixteen wide column content">body</div>
         <div className="sixteen wide column footer"></div>
       </div>
     );

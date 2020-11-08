@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route, Router } from 'react-router-dom';
+// import { Router, Route } from 'react-router';
 import routes from './routers';
 import GlobalLoading from './components/loader';
 import history from './common/history';
 
 function App() {
   return (
-    <div className="App ui grid container">
+    <div className="App ui container">
       <Router history={history}>
         <GlobalLoading></GlobalLoading>
         <Switch>

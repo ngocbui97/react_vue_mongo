@@ -15,5 +15,7 @@ namespace Repository.Interface
         void Update(User user);
         void Delete(User user);
         Task<User> GetByEmailAsync(string email);
+
+        Task<Boolean> CheckPermission(int id, string namePermission); 
     }
 }

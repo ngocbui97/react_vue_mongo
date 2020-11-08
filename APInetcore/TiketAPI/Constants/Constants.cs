@@ -12,5 +12,7 @@ namespace TiketAPI
         public static readonly int ROLE_ADDMIN = 0;
         public static readonly int ROLE_HR = 1;
         public static readonly int ROLE_MEMBER = 2;
+
+        public static readonly string SESSION_LOGIN = "Sessionlogin";
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Repository.EF;
 using Repository.Interface;
@@ -38,6 +39,11 @@ namespace TiketAPI.Services
             await _userRepositoty.AddAsync(user);
         }
 
+        public async Task<bool> CheckPermission(int userId, string namePermission)
+        {
+            return await _userRepositoty.CheckPermission(userId, namePermission);
+        }
+
         public async Task Delete(int id)
         {
             User user = await _userRepositoty.GetByIdAsync(id);
@@ -49,9 +55,10 @@ namespace TiketAPI.Services
             return await _userRepositoty.GetByIdAsync(id);
         }
 
-        public async Task<QueryListResult<User>> GetListAsync(QueryParram parram)
+        public async Task<ResponseService<QueryListResult<User>>> GetListAsync(QueryParram parram)
         {
-            return await _userRepositoty.GetListAsync(parram);
+            QueryListResult<User> users = await _userRepositoty.GetListAsync(parram);
+            return new ResponseService<QueryListResult<User>>(users);
         }
 
         public async Task<ResponseService<UserLoginModel>> Login(string email, string password)
@@ -66,7 +73,7 @@ namespace TiketAPI.Services
                     JwtService jwt = new JwtService(_config);
                     UserLoginModel userLogin = _mapper.Map<User, UserLoginModel>(user);
                     userLogin.AccessToken = jwt.GenerateSecurityToken(userLogin.Email, false);
-                    userLogin.RefreshToken = jwt.GenerateSecurityToken(userLogin.Email, true);
+                    userLogin.RefreshToken = jwt.GenerateSecurityToken(userLogin.Email, true);            
                     return new ResponseService<UserLoginModel>(userLogin);
                 }
                 return new ResponseService<UserLoginModel>("Wrong email or password");
@@ -116,5 +123,6 @@ namespace TiketAPI.Services
             user = await _userRepositoty.GetByIdAsync(user.Id);
             _userRepositoty.Update(user);
         }
+
     }
 }

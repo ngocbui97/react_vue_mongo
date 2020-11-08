@@ -46,12 +46,21 @@ namespace TiketAPI
 
             services.AddCustomSwagger();
             services.AddMemoryCache();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.ConfigureLoggerService();
             services.AddControllers();
             services.AddTokenAuthentication(Configuration);
             services.ConfigureCors(Configuration);
             services.AddScoped<ModelValidationAttribute>();
             services.AddSingleton<ILoggerManager, LoggerService>();
+            services.AddAuthorization(options =>
+            {
+                //options.AddPolicy("Permission", policyBuilder =>
+                //{
+                //    policyBuilder.Requirements.Add(new PermissionAuthorizationRequirement());
+                //});
+            });
 
             // Inject repository
             services.AddSingleton<IUserRepositoty, UserRepository>();
@@ -81,6 +90,8 @@ namespace TiketAPI
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

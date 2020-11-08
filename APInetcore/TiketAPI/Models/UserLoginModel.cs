@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace TiketAPI.Models
 {
+    [Serializable]
     public class UserLoginModel
     {
         public int Id { get; set; }

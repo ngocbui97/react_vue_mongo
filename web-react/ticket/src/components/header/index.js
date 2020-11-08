@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Dropdown, Menu } from 'semantic-ui-react';
 import history from '../../common/history';
-import { Redirect, withRouter } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class Header extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu size="tiny">
+      <Menu inverted size="tiny">
         <Menu.Item
           name="home"
           active={activeItem === 'home'}
@@ -52,4 +51,4 @@ class Header extends Component {
     );
   }
 }
-export default withRouter(Header);
+export default Header;

@@ -1,7 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Repository.EF;
+using Repository.Queries;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
+using TiketAPI.CustomAttributes;
+using TiketAPI.Extensions;
 using TiketAPI.Interfaces;
 using TiketAPI.Models;
 
@@ -29,14 +35,39 @@ namespace TiketAPI.Controllers
         //{
            
         //}
-
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserModel user)
         {
             ResponseService<UserLoginModel> response = await _userService.Login(user.Email, user.Password);
-            if (!response.Success) return BadRequest(response.Message);
-            return Ok(response.Resource);
+            if (response.Success)
+            {
+                HttpContext.Session.Add<UserLoginModel>(Constants.SESSION_LOGIN, response.Resource); 
+                return Ok(response.Resource);
+            }
+            else 
+            {
+                return BadRequest(response.Message);
+            } 
+           
         }
+
+        [Permission(Name = "view")]
+        [HttpGet("list-user")]
+        public async Task<IActionResult> GetList([FromBody] UserModel user)
+        {
+            QueryParram queryParram = new QueryParram(1, 2);
+            ResponseService <QueryListResult<User>> response = await _userService.GetListAsync(queryParram);
+            if (response.Success)
+            {
+                return Ok(response.Resource);
+            }
+            else
+            {
+                return BadRequest(response.Message);
+            }
+
+        }
+
         protected bool IsValidEmail(string email)
         {
             try
