@@ -20,7 +20,7 @@ class Header extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu inverted size="tiny">
+      <Menu inverted size="tiny" className="none-boder-radius">
         <Menu.Item
           name="home"
           active={activeItem === 'home'}

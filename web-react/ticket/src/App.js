@@ -5,10 +5,11 @@ import { Switch, Route, Router } from 'react-router-dom';
 import routes from './routers';
 import GlobalLoading from './components/loader';
 import history from './common/history';
+import './common/style.scss';
 
 function App() {
   return (
-    <div className="App ui container">
+    <div className="App ui fluid container">
       <Router history={history}>
         <GlobalLoading></GlobalLoading>
         <Switch>
