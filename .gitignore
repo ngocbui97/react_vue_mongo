@@ -2,3 +2,5 @@
 /API/.vscode
 /APInetcore/TiketAPI/.vs
 /APInetcore/TiketAPI/bin
+/APInetcore/TiketAPI/obj
+/APInetcore/Repository/obj

@@ -1,0 +1,44 @@
+.bg-main-body{
+    background-image: url('../../assets/images/main-body.jpg');
+    height: 60rem;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.button-find-job{
+    width: 9.59rem;
+    margin-right: 1rem!important;
+}
+.title-header{
+    color: aliceblue!important;
+}
+.wellcome{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.divider-body{
+    margin-left: 8rem!important;
+    margin-right: 8rem!important;
+}
+.new-info{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.title-new-info{
+    
+}
+.img-card{
+    img{
+        height: 15rem!important;
+    }
+}
+.custom-card{
+    cursor: pointer;
+}
+    
+
+
