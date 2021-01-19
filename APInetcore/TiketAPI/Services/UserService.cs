@@ -30,9 +30,9 @@ namespace TiketAPI.Services
 
         }
 
-        public async Task AddAsync(User user)
+        public async Task<User> AddAsync(User user)
         {
-            await _userRepositoty.AddAsync(user);
+            return await _userRepositoty.AddAsync(user);
         }
 
         public async Task<bool> CheckPermission(int userId, string namePermission)
@@ -40,9 +40,9 @@ namespace TiketAPI.Services
             return await _userRepositoty.CheckPermission(userId, namePermission);
         }
 
-        public async Task Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            _userRepositoty.DeleteAsync(id);
+            return await _userRepositoty.DeleteAsync(id);
         }
 
         public async Task<User> GetById(int id)
@@ -113,9 +113,9 @@ namespace TiketAPI.Services
            
         }
 
-        public async Task Update(User user)
+        public async Task<User>Update(User user)
         {
-            _userRepositoty.UpdateAsync(user);
+            return await _userRepositoty.UpdateAsync(user);
         }
 
     }
