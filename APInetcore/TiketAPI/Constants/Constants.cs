@@ -14,5 +14,7 @@ namespace TiketAPI
         public static readonly int ROLE_MEMBER = 2;
 
         public static readonly string SESSION_LOGIN = "Sessionlogin";
+
+        public static readonly string CONF_HOST_CRM = "https://";
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Repository.CustomModels;
 using Repository.EF;
 using Repository.Queries;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ namespace TiketAPI.Controllers
         public async Task<IActionResult> GetList([FromBody] UserModel user)
         {
             QueryParram queryParram = new QueryParram(1, 2);
-            ResponseService <QueryListResult<User>> response = await _userService.GetListAsync(queryParram);
+            ResponseService <ListResult<User>> response = await _userService.GetListAsync(queryParram);
             if (response.Success)
             {
                 return Ok(response.Resource);

@@ -1,4 +1,5 @@
-﻿using Repository.EF;
+﻿using Repository.CustomModels;
+using Repository.EF;
 using Repository.Queries;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace TiketAPI.Interfaces
 {
     public interface IUserService
     {
-        Task<ResponseService<QueryListResult<User>>> GetListAsync(QueryParram parram);
+        Task<ResponseService<ListResult<User>>> GetListAsync(QueryParram parram);
         Task<User> GetById(int id);
         Task AddAsync(User user);
         Task Update(User user);

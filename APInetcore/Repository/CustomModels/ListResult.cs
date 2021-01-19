@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Repository.Queries
+namespace Repository.CustomModels
 {
-    public class QueryListResult<T>
+    public class ListResult<T>
     {
         public List<T> Items { get; set; } = new List<T>();
         public int TotalItems { get; set; } = 0;
-        public QueryListResult(List<T> items, int totalItems)
+        public ListResult(List<T> items, int totalItems)
         {
             Items = items;
             TotalItems = totalItems;

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using Repository.CustomModels;
 using Repository.EF;
 using Repository.Interface;
 using Repository.Queries;
@@ -16,22 +17,17 @@ using Profile = Repository.EF.Profile;
 
 namespace TiketAPI.Services
 {
-    public class UserService : IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly IUserRepositoty _userRepositoty;
         private readonly IProfileRepository _profileRepository;
-        private readonly ILoggerManager _logger;
-        private readonly IMapper _mapper;
-        private readonly IConfiguration _config;
 
-        public UserService(IUserRepositoty userRepositoty, IProfileRepository profileRepository, ILoggerManager logger
-            , IMapper mapper, IConfiguration config)
+        public UserService(IUserRepositoty userRepositoty, IProfileRepository profileRepository, IConfiguration config,
+            ILoggerManager logger, IMapper mapper) : base(config, logger, mapper)
         {
             _userRepositoty = userRepositoty;
             _profileRepository = profileRepository;
-            _logger = logger;
-            _mapper = mapper;
-            _config = config;
+
         }
 
         public async Task AddAsync(User user)
@@ -46,8 +42,7 @@ namespace TiketAPI.Services
 
         public async Task Delete(int id)
         {
-            User user = await _userRepositoty.GetByIdAsync(id);
-            _userRepositoty.Delete(user);
+            _userRepositoty.DeleteAsync(id);
         }
 
         public async Task<User> GetById(int id)
@@ -55,10 +50,10 @@ namespace TiketAPI.Services
             return await _userRepositoty.GetByIdAsync(id);
         }
 
-        public async Task<ResponseService<QueryListResult<User>>> GetListAsync(QueryParram parram)
+        public async Task<ResponseService<ListResult<User>>> GetListAsync(QueryParram parram)
         {
-            QueryListResult<User> users = await _userRepositoty.GetListAsync(parram);
-            return new ResponseService<QueryListResult<User>>(users);
+            ListResult<User> users = await _userRepositoty.GetListAsync(parram);
+            return new ResponseService<ListResult<User>>(users);
         }
 
         public async Task<ResponseService<UserLoginModel>> Login(string email, string password)
@@ -98,11 +93,11 @@ namespace TiketAPI.Services
                 user.CreatedAt = DateTime.Now;
                 user.UpdatedAt = DateTime.Now;
                 user.Active = true;
-                int userId = await _userRepositoty.AddAsync(user);
+                var userInfo = await _userRepositoty.AddAsync(user);
 
                 Profile profile = new Profile();
                 profile.Status = Constants.DEFAULT_STATUS_PROFILE;
-                profile.UserId = userId;
+                profile.UserId = userInfo.Id;
                 profile.CreatedAt = DateTime.Now;
                 profile.UpdatedAt = DateTime.Now;
                 profile.Active = true;
@@ -120,8 +115,7 @@ namespace TiketAPI.Services
 
         public async Task Update(User user)
         {
-            user = await _userRepositoty.GetByIdAsync(user.Id);
-            _userRepositoty.Update(user);
+            _userRepositoty.UpdateAsync(user);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Repository.EF;
+﻿using Repository.CustomModels;
+using Repository.EF;
 using Repository.Queries;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,8 @@ using System.Threading.Tasks;
 
 namespace Repository.Interface
 {
-    public interface IUserRepositoty
+    public interface IUserRepositoty : IRepository<User>
     {
-        Task<QueryListResult<User>> GetListAsync(QueryParram parram);
-        Task<User> GetByIdAsync(int id);
-        Task<int> AddAsync(User user);
-        void Update(User user);
-        void Delete(User user);
         Task<User> GetByEmailAsync(string email);
 
         Task<Boolean> CheckPermission(int id, string namePermission); 

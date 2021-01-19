@@ -9,12 +9,7 @@ using Profile = Repository.EF.Profile;
 
 namespace Repository.Interface
 {
-    public interface IProfileRepository
+    public interface IProfileRepository : IRepository<Profile>
     {
-        Task<QueryListResult<Profile>> GetListAsync(QueryParram parram);
-        Task<Profile> GetByIdAsync(int id);
-        Task<int> AddAsync(Profile profile);
-        void Update(Profile profile);
-        void Delete(Profile profile);
     }
 }
