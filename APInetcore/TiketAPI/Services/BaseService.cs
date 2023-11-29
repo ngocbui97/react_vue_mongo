@@ -1,15 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Repository.CustomModels;
+using System.Diagnostics;
+using TiketAPI.Commons;
 using TiketAPI.Interfaces;
 
 namespace TiketAPI.Services
 {
-    public class BaseService
+    public class BaseService : BaseParamEntity
     {
         protected readonly IConfiguration _config;
         protected readonly ILoggerManager _logger;
@@ -20,6 +18,10 @@ namespace TiketAPI.Services
             _config = config;
             _logger = logger;
             _mapper = mapper;
+        }
+        public static string GetMethodName(StackTrace stackTrace)
+        {
+            return CommonFunc.GetMethodName(stackTrace);
         }
     }
 }

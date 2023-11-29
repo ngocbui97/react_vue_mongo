@@ -1,24 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using TiketAPI.Config;
 
 namespace TiketAPI.Commons
 {
     public class SessionStore
     {
-        public static string Get(string key)
+        private static ISession session = ConfigContainerDJ.CreateIntance<ISession>();
+        public static void Set<T>(string key, T data)
         {
-            //if (HttpContext.Current.Session[key] != null)
-            //{
-            //    return HttpContext.Current.Session[key].ToString();
-            //}
-            return null;
+            string serializedData = JsonConvert.SerializeObject(data);
+            if (session != null) session.SetString(key, serializedData);
         }
-        public static void Set(string key, string value)
+        public static T Get<T>(string key)
         {
-            //HttpContext.Current.Session[key] = value;
+            if (session == null) return default;
+            var data = session.GetString(key);
+            if (null != data)
+                return JsonConvert.DeserializeObject<T>(data);
+            return default(T);
         }
     }
 }

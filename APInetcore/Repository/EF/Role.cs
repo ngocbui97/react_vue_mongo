@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace Repository.EF
 {
-    [Table("Role")]
     public partial class Role
     {
         public Role()
         {
-            RoleFunction = new HashSet<RoleFunction>();
             User = new HashSet<User>();
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool Active { get; set; }
+        public Guid id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public bool? is_active { get; set; }
 
-        public virtual ICollection<RoleFunction> RoleFunction { get; set; }
         public virtual ICollection<User> User { get; set; }
     }
 }

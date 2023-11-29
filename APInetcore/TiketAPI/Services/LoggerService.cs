@@ -1,8 +1,7 @@
-﻿using NLog;
+﻿using Newtonsoft.Json;
+using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using TiketAPI.Commons;
 using TiketAPI.Interfaces;
 
 namespace TiketAPI.Services
@@ -20,7 +19,10 @@ namespace TiketAPI.Services
         {
             logger.Error(message);
         }
-
+        public void LogError(Exception ex)
+        {
+            logger.Error(JsonConvert.SerializeObject(ex));
+        }
         public void LogInfo(string message)
         {
             logger.Info(message);

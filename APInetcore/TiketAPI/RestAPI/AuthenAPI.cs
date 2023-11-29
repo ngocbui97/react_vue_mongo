@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
@@ -23,10 +22,11 @@ namespace TiketAPI.RestAPI
             BaseResponse<UserModel> resAuthen = new BaseResponse<UserModel>();
             try
             {
-                _response = await _requestAPI.client.PostAsJsonAsync(PATH_PRE_API + "validate", string.Empty);
+                _response = await _requestAPI.client.PostAsync(PATH_PRE_API + "validate", new StringContent(String.Empty));
                 if (_response.IsSuccessStatusCode)
                 {
-                    resAuthen = await _response.Content.ReadAsAsync<BaseResponse<UserModel>>();
+                    var resString = await _response.Content.ReadAsStringAsync();
+                    resAuthen = JsonConvert.DeserializeObject<BaseResponse<UserModel>>(resString);
                     resAuthen.success = true;
                 }
                 else

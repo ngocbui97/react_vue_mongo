@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2022/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Implement method</Title>
+			<Author>ngocbn</Author>
+            <Description>Implement method service</Description>
+            <Shortcut>implement</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[try
+{
+	_logger.LogInfo(Method.GetCurrentMethod().Name);
+	
+	return new ResponseService<>();
+}
+catch (Exception ex)
+{
+	_logger.LogError(ex.Message);
+	return new ResponseService<>(ex.Message);
+}]]>
+            </Code>
+			<Declarations>
+				<Literal>
+					<ID>classname</ID>
+					<ToolTip>Input classname.</ToolTip>
+					<Default>ClassName</Default>
+				</Literal>
+			</Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

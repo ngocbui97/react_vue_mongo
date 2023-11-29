@@ -1,9 +1,8 @@
 ﻿using Repository.CustomModels;
 using Repository.EF;
-using Repository.Queries;
+using Repository.Params;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.Models;
@@ -12,14 +11,15 @@ namespace TiketAPI.Interfaces
 {
     public interface IUserService
     {
-        Task<ResponseService<ListResult<User>>> GetListAsync(QueryParram parram);
-        Task<User> GetById(int id);
-        Task<User> AddAsync(User user);
-        Task<User> Update(User user);
-        Task<bool> Delete(int id);
+        Task<ResponseService<ListResult<User>>> GetListAsync(PagingParam parram);
+        Task<ResponseService<User>> GetById(Guid id);
+        Task<ResponseService<User>> Update(User user);
+        Task<ResponseService<bool>> Delete(Guid id);
+        Task<ResponseService<ListResult<UserInfo>>> GetUsersInfo(SearchUserParam param);
         Task<ResponseService<User>> Register(UserModel user);
-        Task<ResponseService<UserLoginModel>> Login(string email, string password);
-        Task<bool> CheckPermission(int userId, string namePermission);
-
+        Task<ResponseService<ResponseLoginModel>> Login(string email, string password);
+        Task<bool> CheckPermission(Guid userId, string namePermission);
+        Task<ResponseService<bool>> ForgotPassword(string email);
+        Task<ResponseService<bool>> ResetPassword(string code, string email, string password);
     }
 }

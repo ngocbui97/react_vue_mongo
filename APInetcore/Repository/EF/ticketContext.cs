@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Configuration;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace Repository.EF
 {
@@ -18,167 +19,302 @@ namespace Repository.EF
         {
         }
 
-        public virtual DbSet<Function> Functions { get; set; }
-        public virtual DbSet<Profile> Profiles { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<RoleFunction> RoleFunctions { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Certificate> Certificate { get; set; }
+        public virtual DbSet<Comment> Comment { get; set; }
+        public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<Conversation> Conversation { get; set; }
+        public virtual DbSet<Education> Education { get; set; }
+        public virtual DbSet<Experience> Experience { get; set; }
+        public virtual DbSet<Job> Job { get; set; }
+        public virtual DbSet<MapJobUser> MapJobUser { get; set; }
+        public virtual DbSet<MapSkill> MapSkill { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
+        public virtual DbSet<Task_Job> Task_Job { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
-                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-P62412M;Database=Ticket;user=sa;password=B@sebs1234%;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Function>(entity =>
+            modelBuilder.Entity<Certificate>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.Active).HasColumnName("active");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
+                entity.Property(e => e.modify_time).HasColumnType("datetime");
+
+                entity.Property(e => e.state).HasMaxLength(200);
+
+                entity.HasOne(d => d.user_)
+                    .WithMany(p => p.Certificate)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_Certificate_User");
             });
 
-            modelBuilder.Entity<Profile>(entity =>
+            modelBuilder.Entity<Comment>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.Active).HasColumnName("active");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnName("created_at")
-                    .HasColumnType("date");
+                entity.HasOne(d => d.company_)
+                    .WithMany(p => p.Comment)
+                    .HasForeignKey(d => d.company_id)
+                    .HasConstraintName("FK_Comment_Company");
 
-                entity.Property(e => e.CurrentPosition)
-                    .HasColumnName("current_position")
-                    .HasMaxLength(20);
+                entity.HasOne(d => d.create_byNavigation)
+                    .WithMany(p => p.Comment)
+                    .HasForeignKey(d => d.create_by)
+                    .HasConstraintName("FK_Comment_User");
 
-                entity.Property(e => e.ExpectPosition)
-                    .HasColumnName("expect_position")
-                    .HasMaxLength(50);
+                entity.HasOne(d => d.job_)
+                    .WithMany(p => p.Comment)
+                    .HasForeignKey(d => d.job_id)
+                    .HasConstraintName("FK_Comment_Job");
+            });
 
-                entity.Property(e => e.Status).HasColumnName("status");
+            modelBuilder.Entity<Company>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.University)
-                    .HasColumnName("university")
-                    .HasMaxLength(50);
+                entity.Property(e => e.name).HasMaxLength(500);
 
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnName("updated_at")
-                    .HasColumnType("date");
+                entity.Property(e => e.start_time).HasColumnType("datetime");
+            });
 
-                entity.Property(e => e.UserId).HasColumnName("UserID");
+            modelBuilder.Entity<Conversation>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Profile)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Profile_User");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
+                entity.HasOne(d => d.create_byNavigation)
+                    .WithMany(p => p.Conversationcreate_byNavigation)
+                    .HasForeignKey(d => d.create_by)
+                    .HasConstraintName("FK_Conversation_User1");
+
+                entity.HasOne(d => d.to_user_)
+                    .WithMany(p => p.Conversationto_user_)
+                    .HasForeignKey(d => d.to_user_id)
+                    .HasConstraintName("FK_Conversation_User");
+            });
+
+            modelBuilder.Entity<Education>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.end_time).HasColumnType("datetime");
+
+                entity.Property(e => e.school_name).HasMaxLength(200);
+
+                entity.Property(e => e.start_time).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<Experience>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.end_time).HasColumnType("datetime");
+
+                entity.Property(e => e.position).HasMaxLength(200);
+
+                entity.Property(e => e.project_name).HasMaxLength(500);
+
+                entity.Property(e => e.start_time).HasColumnType("datetime");
+
+                entity.HasOne(d => d.company_)
+                    .WithMany(p => p.Experience)
+                    .HasForeignKey(d => d.company_id)
+                    .HasConstraintName("FK_Experience_Company");
+
+                entity.HasOne(d => d.user_)
+                    .WithMany(p => p.Experience)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_Experience_User");
+            });
+
+            modelBuilder.Entity<Job>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.city).HasMaxLength(500);
+
+                entity.Property(e => e.contact_info).HasMaxLength(500);
+
+                entity.Property(e => e.create_by).HasMaxLength(50);
+
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
+                entity.Property(e => e.end_time).HasColumnType("datetime");
+
+                entity.Property(e => e.language_code).HasMaxLength(50);
+
+                entity.Property(e => e.language_communicate).HasMaxLength(50);
+
+                entity.Property(e => e.level).HasMaxLength(50);
+
+                entity.Property(e => e.modify_by).HasMaxLength(50);
+
+                entity.Property(e => e.modify_time).HasColumnType("datetime");
+
+                entity.Property(e => e.position).HasMaxLength(500);
+
+                entity.Property(e => e.salary).HasMaxLength(500);
+
+                entity.Property(e => e.stat_time).HasColumnType("datetime");
+
+                entity.Property(e => e.state)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.type_job)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasComment("(from_hr,from_candidate)");
+
+                entity.HasOne(d => d.company_)
+                    .WithMany(p => p.Job)
+                    .HasForeignKey(d => d.company_id)
+                    .HasConstraintName("FK_Job_Company");
+            });
+
+            modelBuilder.Entity<MapJobUser>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
+                entity.HasOne(d => d.user_)
+                    .WithMany(p => p.MapJobUser)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_MapJobUser_Job");
+
+                entity.HasOne(d => d.user_Navigation)
+                    .WithMany(p => p.MapJobUser)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_MapJobUser_User");
+            });
+
+            modelBuilder.Entity<MapSkill>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
+                entity.HasOne(d => d.job_)
+                    .WithMany(p => p.MapSkill)
+                    .HasForeignKey(d => d.job_id)
+                    .HasConstraintName("FK_MapSkill_Job");
+
+                entity.HasOne(d => d.skill_)
+                    .WithMany(p => p.MapSkill)
+                    .HasForeignKey(d => d.skill_id)
+                    .HasConstraintName("FK_MapSkill_Skill");
+
+                entity.HasOne(d => d.user_)
+                    .WithMany(p => p.MapSkill)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_MapSkill_User");
             });
 
             modelBuilder.Entity<Role>(entity =>
             {
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.Active).HasColumnName("active");
-
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasColumnName("description")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                entity.Property(e => e.name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
-            modelBuilder.Entity<RoleFunction>(entity =>
+            modelBuilder.Entity<Skill>(entity =>
             {
-                entity.ToTable("Role_function");
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.Property(e => e.Active).HasColumnName("active");
+                entity.Property(e => e.name).HasMaxLength(100);
+            });
 
-                entity.Property(e => e.FunctionId).HasColumnName("functionID");
+            modelBuilder.Entity<Task_Job>(entity =>
+            {
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.RoleId).HasColumnName("roleID");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.HasOne(d => d.Function)
-                    .WithMany(p => p.RoleFunction)
-                    .HasForeignKey(d => d.FunctionId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Role_function_Function");
+                entity.Property(e => e.description).HasMaxLength(1000);
 
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.RoleFunction)
-                    .HasForeignKey(d => d.RoleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Role_function_Role");
+                entity.Property(e => e.name).HasMaxLength(500);
+
+                entity.HasOne(d => d.job_)
+                    .WithMany(p => p.Task_Job)
+                    .HasForeignKey(d => d.job_id)
+                    .HasConstraintName("FK_Task_Job_Job");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.Active).HasColumnName("active");
+                entity.Property(e => e.address).HasMaxLength(1000);
 
-                entity.Property(e => e.Adress)
-                    .HasColumnName("adress")
-                    .HasMaxLength(50);
+                entity.Property(e => e.code)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Age).HasColumnName("age");
+                entity.Property(e => e.create_by)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnName("created_at")
-                    .HasColumnType("date");
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasColumnName("email")
-                    .HasMaxLength(30)
-                    .IsFixedLength();
+                entity.Property(e => e.email)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
+                entity.Property(e => e.link_cv).HasMaxLength(500);
 
-                entity.Property(e => e.Password)
-                    .IsRequired()
-                    .HasColumnName("password")
-                    .HasMaxLength(50);
+                entity.Property(e => e.modify_by)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Phone)
-                    .HasColumnName("phone")
-                    .HasMaxLength(15)
-                    .IsFixedLength();
+                entity.Property(e => e.modify_time).HasColumnType("datetime");
 
-                entity.Property(e => e.RoleId).HasColumnName("roleID");
+                entity.Property(e => e.name).HasMaxLength(200);
 
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnName("updated_at")
-                    .HasColumnType("date");
+                entity.Property(e => e.note).HasMaxLength(1000);
 
-                entity.HasOne(d => d.Role)
+                entity.Property(e => e.open_job_time).HasColumnType("datetime");
+
+                entity.Property(e => e.password).HasMaxLength(1000);
+
+                entity.Property(e => e.phone).HasMaxLength(50);
+
+                entity.Property(e => e.state)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.company_)
                     .WithMany(p => p.User)
-                    .HasForeignKey(d => d.RoleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.company_id)
+                    .HasConstraintName("FK_User_Company");
+
+                entity.HasOne(d => d.education_)
+                    .WithMany(p => p.User)
+                    .HasForeignKey(d => d.education_id)
+                    .HasConstraintName("FK_User_Education");
+
+                entity.HasOne(d => d.role_)
+                    .WithMany(p => p.User)
+                    .HasForeignKey(d => d.role_id)
                     .HasConstraintName("FK_User_Role");
             });
 

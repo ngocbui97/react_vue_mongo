@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+using TiketAPI.Config;
 
 namespace TiketAPI.Extensions
 {
@@ -17,6 +12,8 @@ namespace TiketAPI.Extensions
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger Ticket API", Version = "v1" });
+                c.OperationFilter<AuthorizationOperationFiltercs>();
+                c.SchemaFilter<SchemaFilter>();
             });
             return services;
         }

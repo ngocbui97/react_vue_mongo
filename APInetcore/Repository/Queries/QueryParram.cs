@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Repository.Queries
+﻿namespace Repository.Queries
 {
     public class QueryParram
     {

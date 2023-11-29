@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TiketAPI.Interfaces
 {
@@ -11,5 +8,6 @@ namespace TiketAPI.Interfaces
         void LogWarn(string message);
         void LogDebug(string message);
         void LogError(string message);
+        void LogError(Exception ex);
     }
 }

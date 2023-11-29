@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TiketAPI
+﻿namespace TiketAPI
 {
     public class Constants
     {
@@ -13,8 +8,14 @@ namespace TiketAPI
         public static readonly int ROLE_HR = 1;
         public static readonly int ROLE_MEMBER = 2;
 
-        public static readonly string SESSION_LOGIN = "Sessionlogin";
+        public static readonly string SESSION_LOGIN = "session_login";
 
         public static readonly string CONF_HOST_CRM = "https://";
+        public enum AUTHOR { TOKEN, SECRET_KEY, TOKEN_OR_KEY };
+        public const string SUBJECT_REGISTER = "Register account success from Job Viet";
+        public const string CONTENT_REGISTER = "Welcome to our service!";
+        public const string SUBJECT_FORGOT_PASSWORD = "Forgot password from Job Viet";
+        public const string CONTENT_FORGOT_PASSWORD = "Click this link to reset password: ";
+        public const string SALT_KEY = "Kaepf5wqbb259704";// 16 character
     }
 }

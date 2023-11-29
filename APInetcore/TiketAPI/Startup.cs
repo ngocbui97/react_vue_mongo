@@ -1,20 +1,18 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using NLog;
+using Repository.CustomContext;
 using Repository.Interface;
 using Repository.Repository;
 using TiketAPI.Commons;
+using TiketAPI.Config;
 using TiketAPI.CustomAttributes;
 using TiketAPI.Extensions;
 using TiketAPI.Interfaces;
@@ -35,6 +33,11 @@ namespace TiketAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DbContextCustom>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            }, ServiceLifetime.Transient);
+
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -50,6 +53,7 @@ namespace TiketAPI
             services.AddSession();
             services.ConfigureLoggerService();
             services.AddControllers();
+            services.AddRouting(options => options.LowercaseUrls = true);
             services.AddTokenAuthentication(Configuration);
             services.ConfigureCors(Configuration);
             services.AddScoped<ModelValidationAttribute>();
@@ -64,11 +68,13 @@ namespace TiketAPI
 
             // Inject repository
             services.AddSingleton<IUserRepositoty, UserRepository>();
-            services.AddSingleton<IProfileRepository, ProfileRepository>();
+            services.AddSingleton<ISkillRepository, SkillRepository>();
 
             // Inject service
             services.AddSingleton<IUserService, UserService>();
-            
+
+            // store service provider
+            ConfigContainerDJ.CurrentProvider = services.BuildServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
