@@ -17,7 +17,7 @@ using Z.EntityFramework.Plus;
 
 namespace Repository.Repository
 {
-    public abstract class BaseRepository<T> : BaseParamEntity, IRepository<T> where T : class, new()
+    public class BaseRepository<T> : BaseParamEntity, IRepository<T> where T : class, new()
     {
         protected readonly DbContextCustom _db;
         public BaseRepository()

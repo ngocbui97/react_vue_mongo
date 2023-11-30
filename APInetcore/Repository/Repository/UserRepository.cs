@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    public class UserRepository : BaseRepository<User>, IUserRepositoty
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         public UserRepository() : base() { }
 

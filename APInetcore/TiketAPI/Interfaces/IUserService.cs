@@ -9,12 +9,8 @@ using TiketAPI.Models;
 
 namespace TiketAPI.Interfaces
 {
-    public interface IUserService
+    public interface IUserService : IService<User>
     {
-        Task<ResponseService<ListResult<User>>> GetListAsync(PagingParam parram);
-        Task<ResponseService<User>> GetById(Guid id);
-        Task<ResponseService<User>> Update(User user);
-        Task<ResponseService<bool>> Delete(Guid id);
         Task<ResponseService<ListResult<UserInfo>>> GetUsersInfo(SearchUserParam param);
         Task<ResponseService<User>> Register(UserModel user);
         Task<ResponseService<ResponseLoginModel>> Login(string email, string password);

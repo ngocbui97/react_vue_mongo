@@ -26,7 +26,7 @@ namespace TiketAPI.Controllers
         [HttpPost("update")]
         public async Task<IActionResult> Update([FromBody] User param)
         {
-            ResponseService<User> response = await _userService.Update(param);
+            ResponseService<User> response = await _userService.Update(param.id, param);
             if (response.success) 
             {
                 return Ok(response);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interface
 {
-    public interface IUserRepositoty : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
         Task<User> GetByEmailAsync(string email);
         Task<Boolean> CheckPermission(Guid id, string namePermission);

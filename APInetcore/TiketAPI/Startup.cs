@@ -67,7 +67,8 @@ namespace TiketAPI
             });
 
             // Inject repository
-            services.AddSingleton<IUserRepositoty, UserRepository>();
+            services.AddSingleton(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<ISkillRepository, SkillRepository>();
 
             // Inject service
