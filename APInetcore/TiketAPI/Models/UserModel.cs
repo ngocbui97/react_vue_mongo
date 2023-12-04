@@ -23,6 +23,9 @@ namespace TiketAPI.Models
         public string current_position { get; set; }
         public Guid? company_id { get; set; }
         public string code { get; set; }
+        public double? year_experience { get; set; }
+        public string note { get; set; }
+        public string link_cv { get; set; }
     }
     public class ResponseLoginModel : UserModel
     {

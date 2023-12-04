@@ -41,6 +41,7 @@ namespace TiketAPI
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
             {
+                mc.AllowNullCollections = true;
                 mc.AddProfile(new MappingProfile());
             });
             IMapper mapper = mappingConfig.CreateMapper();

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Repository.EF
 {
-    public partial class Task_Job
+    public partial class TaskJob
     {
         public Guid id { get; set; }
         public string name { get; set; }

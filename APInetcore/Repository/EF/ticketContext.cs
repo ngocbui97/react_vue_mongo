@@ -30,7 +30,7 @@ namespace Repository.EF
         public virtual DbSet<MapSkill> MapSkill { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
-        public virtual DbSet<Task_Job> Task_Job { get; set; }
+        public virtual DbSet<TaskJob> Task_Job { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -244,7 +244,7 @@ namespace Repository.EF
                 entity.Property(e => e.name).HasMaxLength(100);
             });
 
-            modelBuilder.Entity<Task_Job>(entity =>
+            modelBuilder.Entity<TaskJob>(entity =>
             {
                 entity.Property(e => e.id).ValueGeneratedNever();
 

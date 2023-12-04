@@ -1,5 +1,12 @@
 ﻿using System.Net;
 using System;
+using Repository.CustomModels;
+using AutoMapper;
+using TiketAPI.Config;
+using Repository.Repository;
+using TiketAPI.Interfaces;
+using System.Collections.Generic;
+using System.Data;
 
 namespace TiketAPI.Commons
 {
@@ -44,6 +51,68 @@ namespace TiketAPI.Commons
             this.status_code = HttpStatusCode.Unauthorized;
             this.success = false;
             return this;
+        }
+    }
+   
+    public static class ResponseServiceExtension
+    {
+        private static readonly IMapper _mapper = ConfigContainerDJ.CreateIntance<IMapper>();
+        private static ILoggerManager _logger = ConfigContainerDJ.CreateIntance<ILoggerManager>();
+
+        /// <summary>
+        /// convert response type T to V
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="V"></typeparam>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static ResponseService<V> ConvertTo<T, V>(this ResponseService<T> response)
+        {
+            try
+            {
+                if (response.success)
+                {
+                    V view = _mapper.Map<T, V>(response.data);
+                    return new ResponseService<V>(view);
+                }
+                else
+                {
+                    return new ResponseService<V>(response.message);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<V>(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// convert response list result type T to V
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="V"></typeparam>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static ResponseService<ListResult<V>> ConvertTo<T, V>(this ResponseService<ListResult<T>> response)
+        {
+            try
+            {
+                if (response.success)
+                {
+                    List<V> view = _mapper.Map<List<T>, List<V>>(response.data.items);
+                    return new ResponseService<ListResult<V>>(new ListResult<V>(view, response.data.items.Count));
+                }
+                else
+                {
+                    return new ResponseService<ListResult<V>>(response.message);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<ListResult<V>>(ex.Message);
+            }
         }
     }
 }

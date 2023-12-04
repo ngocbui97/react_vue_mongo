@@ -6,7 +6,7 @@ namespace TiketAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TokenController : ControllerBase
+    public class TokenController : BaseController
     {
         private IConfiguration _config;
 

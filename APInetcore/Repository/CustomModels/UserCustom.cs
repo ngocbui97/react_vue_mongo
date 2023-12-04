@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Repository.CustomModels
 {
-    internal class UserModels
+    internal class UserCustom
     {
     }
     public class UserInfo

@@ -1,14 +1,19 @@
 ﻿using AutoMapper;
+using Azure;
 using Microsoft.Extensions.Configuration;
 using Repository.CustomModels;
 using Repository.EF;
 using Repository.Interface;
 using Repository.Repository;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.Interfaces;
+using TiketAPI.Models;
 using Method = System.Reflection.MethodBase;
 
 namespace TiketAPI.Services

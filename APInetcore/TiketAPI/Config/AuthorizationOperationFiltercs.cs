@@ -1,6 +1,9 @@
-﻿using Microsoft.OpenApi.Any;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using NLog.Filters;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -20,44 +23,19 @@ namespace TiketAPI.Config
 
             operation.Parameters.Add(new OpenApiParameter()
             {
-                Name = "SecretKey",
+                Name = "apiKey",
                 In = ParameterLocation.Header,
                 Required = false
             });
 
             operation.Parameters.Add(new OpenApiParameter
             {
-                Name = "Authorization",
+                Name = "Bearer",
                 In = ParameterLocation.Header,
                 Description = "access token",
                 Required = false,
                 Schema = new OpenApiSchema() { Type = "String", Default = new OpenApiString("Bearer ") },
-
             }); ;
-        }
-    }
-    public class SchemaFilter : ISchemaFilter
-    {
-        public void Apply(OpenApiSchema schema, SchemaFilterContext context)
-        {
-            if (schema?.Properties == null)
-            {
-                return;
-            }
-
-            var ignoreDataMemberProperties = context.Type.GetProperties()
-                .Where(t => t.GetCustomAttribute<IgnoreDataMemberAttribute>() != null);
-
-            foreach (var ignoreDataMemberProperty in ignoreDataMemberProperties)
-            {
-                var propertyToHide = schema.Properties.Keys
-                    .SingleOrDefault(x => x.ToLower() == ignoreDataMemberProperty.Name.ToLower());
-
-                if (propertyToHide != null)
-                {
-                    schema.Properties.Remove(propertyToHide);
-                }
-            }
         }
     }
 }

@@ -5,6 +5,5 @@ namespace Repository.Repository
 {
     public class SkillRepository : BaseRepository<Skill>, ISkillRepository
     {
-        public SkillRepository() : base() { }
     }
 }
