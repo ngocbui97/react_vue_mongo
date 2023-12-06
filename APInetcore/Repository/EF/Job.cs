@@ -14,7 +14,7 @@ namespace Repository.EF
             Comment = new HashSet<Comment>();
             MapJobUser = new HashSet<MapJobUser>();
             MapSkill = new HashSet<MapSkill>();
-            Task_Job = new HashSet<TaskJob>();
+            TaskJob = new HashSet<TaskJob>();
         }
 
         public Guid id { get; set; }
@@ -45,6 +45,6 @@ namespace Repository.EF
         public virtual ICollection<Comment> Comment { get; set; }
         public virtual ICollection<MapJobUser> MapJobUser { get; set; }
         public virtual ICollection<MapSkill> MapSkill { get; set; }
-        public virtual ICollection<TaskJob> Task_Job { get; set; }
+        public virtual ICollection<TaskJob> TaskJob { get; set; }
     }
 }

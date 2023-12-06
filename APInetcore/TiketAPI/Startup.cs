@@ -9,8 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NLog;
 using Repository.CustomContext;
-using Repository.Interface;
-using Repository.Repository;
 using TiketAPI.Commons;
 using TiketAPI.Config;
 using TiketAPI.CustomAttributes;
@@ -52,6 +50,7 @@ namespace TiketAPI
             services.AddMemoryCache();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddHttpContextAccessor();
             services.ConfigureLoggerService();
             services.AddControllers();
             services.AddRouting(options => options.LowercaseUrls = true);
@@ -67,15 +66,9 @@ namespace TiketAPI
                 //});
             });
 
-            // Inject repository
-            services.AddSingleton(typeof(IRepository<>), typeof(BaseRepository<>));
-            services.AddSingleton<IUserRepository, UserRepository>();
-            services.AddSingleton<ISkillRepository, SkillRepository>();
+            services.ConfigDependencyInjection();
 
-            // Inject service
-            services.AddSingleton<IUserService, UserService>();
-
-            // store service provider
+            // store service DJ provider
             ConfigContainerDJ.CurrentProvider = services.BuildServiceProvider();
         }
 

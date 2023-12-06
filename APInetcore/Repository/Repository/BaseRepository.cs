@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Repository.CustomContext;
 using Repository.CustomModels;
-using Repository.EF;
 using Repository.Interface;
 using System;
 using System.Collections.Generic;

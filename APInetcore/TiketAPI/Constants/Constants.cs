@@ -9,6 +9,7 @@
         public static readonly int ROLE_MEMBER = 2;
 
         public static readonly string SESSION_LOGIN = "session_login";
+        public static readonly string KEY_SESSION_EMAIL = "email";
 
         public static readonly string CONF_HOST_CRM = "https://";
         public enum AUTHOR { TOKEN, SECRET_KEY, TOKEN_OR_KEY };

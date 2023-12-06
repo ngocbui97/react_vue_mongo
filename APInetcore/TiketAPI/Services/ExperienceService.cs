@@ -8,7 +8,7 @@ namespace TiketAPI.Services
 {
     public class ExperienceService : BaseService<Experience>, IExperienceService
     {
-        protected ExperienceService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Experience> baseRepository) : base(config, logger, mapper, baseRepository)
+        public ExperienceService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Experience> baseRepository) : base(config, logger, mapper, baseRepository)
         {
         }
     }

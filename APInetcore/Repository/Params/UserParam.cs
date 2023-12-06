@@ -27,5 +27,6 @@ namespace Repository.Params
         public string state { get; set; }
         public string phone { get; set; }
         public string current_position { get; set; }
+        public string user_type { get; set; }
     }
 }

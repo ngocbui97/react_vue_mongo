@@ -1,30 +1,44 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repository.CustomModels;
-using Repository.EF;
 using Repository.Params;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.CustomAttributes;
 using TiketAPI.Interfaces;
 using TiketAPI.Models;
+using TiketAPI.Params;
 
 namespace TiketAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/task-job")]
     [ApiController]
     public class TaskJobController : BaseController
     {
-        private readonly IUserService _userService;
-        public TaskJobController(IUserService userService)
+        private readonly ITaskJobService _service;
+        public TaskJobController(ITaskJobService service)
         {
-            _userService = userService;
+            _service = service;
+        }
+
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] TaskJobParam param)
+        {
+            ResponseService<TaskJobModel> response = await _service.Create<TaskJobModel>(param);
+            if (response.success)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
         }
 
         [Authorized]
         [HttpPost("update")]
-        public async Task<IActionResult> Update([FromBody] User param)
+        public async Task<IActionResult> Update([FromBody] TaskJobModel param)
         {
-            ResponseService<User> response = await _userService.Update(param.id, param);
+            ResponseService<TaskJobModel> response = await _service.Update<TaskJobModel>(param.id, param);
             if (response.success)
             {
                 return Ok(response);
@@ -39,7 +53,7 @@ namespace TiketAPI.Controllers
         [HttpPost("get-by-id")]
         public async Task<IActionResult> GetById([FromBody] ItemParam param)
         {
-            ResponseService<User> response = await _userService.GetById(param.id);
+            ResponseService<TaskJobModel> response = await _service.GetById<TaskJobModel>(param.id);
             if (response.success)
             {
                 return Ok(response);
@@ -54,7 +68,7 @@ namespace TiketAPI.Controllers
         [HttpPost("delete")]
         public async Task<IActionResult> Delete([FromBody] ItemParam param)
         {
-            ResponseService<bool> response = await _userService.Delete(param.id);
+            ResponseService<bool> response = await _service.Delete(param.id);
             if (response.success)
             {
                 return Ok(response);
@@ -66,10 +80,10 @@ namespace TiketAPI.Controllers
         }
 
         [Authorized]
-        [HttpPost("list-user")]
+        [HttpPost("get-list")]
         public async Task<IActionResult> GetList([FromBody] PagingParam param)
         {
-            ResponseService<ListResult<UserModel>> response = (await _userService.GetListAsync(param)).ConvertTo<User, UserModel>();
+            ResponseService<ListResult<TaskJobModel>> response = await _service.GetListAsync<TaskJobModel>(param);
             if (response.success)
             {
                 return Ok(response);
@@ -79,20 +93,5 @@ namespace TiketAPI.Controllers
                 return BadRequest(response);
             }
         }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserModel param)
-        {
-            ResponseService<User> response = await _userService.Register(param);
-            if (response.success)
-            {
-                return Ok(response);
-            }
-            else
-            {
-                return BadRequest(response);
-            }
-        }
-
     }
 }

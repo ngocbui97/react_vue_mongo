@@ -9,7 +9,6 @@ using Repository.Queries;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Repository.Repository
@@ -35,7 +34,7 @@ namespace Repository.Repository
         }
         public async Task<ListResult<UserInfo>> GetUsersInfo(SearchUserParam param)
         {
-            string fields = "name, email, age_from, age_to, address, state, phone, current_position, col_sort, type_sort, page, limit";
+            string fields = "name, email, age_from, age_to, address, state, phone, current_position, user_type, col_sort, type_sort, page, limit";
             SqlParameter[] paramUser = QueryHelper.ToListParam(param, fields);
             InputProcedure inputUser = new InputProcedure(Procedure.GET_USERS_INFO, paramUser);
 

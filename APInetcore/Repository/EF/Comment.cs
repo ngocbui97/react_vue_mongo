@@ -14,12 +14,12 @@ namespace Repository.EF
         public Guid? company_id { get; set; }
         public Guid? parent_id { get; set; }
         public string message { get; set; }
-        public Guid? create_by { get; set; }
+        public Guid? user_id { get; set; }
         public DateTime? create_time { get; set; }
         public bool? is_active { get; set; }
 
         public virtual Company company_ { get; set; }
-        public virtual User create_byNavigation { get; set; }
         public virtual Job job_ { get; set; }
+        public virtual User user_ { get; set; }
     }
 }

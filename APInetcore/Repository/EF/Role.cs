@@ -18,6 +18,7 @@ namespace Repository.EF
         public string name { get; set; }
         public string description { get; set; }
         public bool? is_active { get; set; }
+        public DateTime? create_time { get; set; }
 
         public virtual ICollection<User> User { get; set; }
     }

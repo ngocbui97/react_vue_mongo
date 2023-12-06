@@ -2,7 +2,6 @@
 using Repository.EF;
 using Repository.Params;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Repository.Interface

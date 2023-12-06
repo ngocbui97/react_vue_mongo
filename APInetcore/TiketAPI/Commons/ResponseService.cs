@@ -3,10 +3,8 @@ using System;
 using Repository.CustomModels;
 using AutoMapper;
 using TiketAPI.Config;
-using Repository.Repository;
 using TiketAPI.Interfaces;
 using System.Collections.Generic;
-using System.Data;
 
 namespace TiketAPI.Commons
 {
@@ -66,13 +64,13 @@ namespace TiketAPI.Commons
         /// <typeparam name="V"></typeparam>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static ResponseService<V> ConvertTo<T, V>(this ResponseService<T> response)
+        public static ResponseService<V> ConvertToResponse<T,V>(this ResponseService<T> response)
         {
             try
             {
                 if (response.success)
                 {
-                    V view = _mapper.Map<T, V>(response.data);
+                    V view = _mapper.Map<T,V>(response.data);
                     return new ResponseService<V>(view);
                 }
                 else
@@ -94,13 +92,13 @@ namespace TiketAPI.Commons
         /// <typeparam name="V"></typeparam>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static ResponseService<ListResult<V>> ConvertTo<T, V>(this ResponseService<ListResult<T>> response)
+        public static ResponseService<ListResult<V>> ConvertToResponse<T, V>(this ResponseService<ListResult<T>> response)
         {
             try
             {
                 if (response.success)
                 {
-                    List<V> view = _mapper.Map<List<T>, List<V>>(response.data.items);
+                    List<V> view = _mapper.Map<List<T>,List<V>>(response.data.items);
                     return new ResponseService<ListResult<V>>(new ListResult<V>(view, response.data.items.Count));
                 }
                 else

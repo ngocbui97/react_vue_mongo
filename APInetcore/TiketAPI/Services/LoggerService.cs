@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using NLog;
 using System;
-using TiketAPI.Commons;
 using TiketAPI.Interfaces;
 
 namespace TiketAPI.Services

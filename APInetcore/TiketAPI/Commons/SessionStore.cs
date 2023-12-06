@@ -6,16 +6,17 @@ namespace TiketAPI.Commons
 {
     public class SessionStore
     {
-        private static ISession session = ConfigContainerDJ.CreateIntance<ISession>();
+        private static IHttpContextAccessor session = ConfigContainerDJ.CreateIntance<IHttpContextAccessor>();
         public static void Set<T>(string key, T data)
         {
+
             string serializedData = JsonConvert.SerializeObject(data);
-            if (session != null) session.SetString(key, serializedData);
+            if (session != null) session.HttpContext.Session.SetString(key, serializedData);
         }
         public static T Get<T>(string key)
         {
             if (session == null) return default;
-            var data = session.GetString(key);
+            var data = session.HttpContext.Session.GetString(key);
             if (null != data)
                 return JsonConvert.DeserializeObject<T>(data);
             return default(T);

@@ -1,6 +1,4 @@
-﻿using NLog.Layouts;
-using Repository.EF;
-using System;
+﻿using System;
 
 namespace TiketAPI.Commons
 {

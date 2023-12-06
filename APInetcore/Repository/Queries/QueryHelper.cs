@@ -1,8 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Repository.Queries
 {

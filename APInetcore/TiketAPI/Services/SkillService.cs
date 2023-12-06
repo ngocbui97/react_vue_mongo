@@ -8,7 +8,7 @@ namespace TiketAPI.Services
 {
     public class SkillService : BaseService<Skill>, ISkillService
     {
-        protected SkillService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Skill> baseRepository) : base(config, logger, mapper, baseRepository)
+        public SkillService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Skill> baseRepository) : base(config, logger, mapper, baseRepository)
         {
         }
     }

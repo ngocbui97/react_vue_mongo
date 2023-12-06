@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Repository.CustomModels;
+﻿using Repository.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

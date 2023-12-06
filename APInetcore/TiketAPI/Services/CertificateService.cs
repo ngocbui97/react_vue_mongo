@@ -8,7 +8,7 @@ namespace TiketAPI.Services
 {
     public class CertificateService : BaseService<Certificate>, ICertificateService
     {
-        protected CertificateService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Certificate> baseRepository) : base(config, logger, mapper, baseRepository)
+        public CertificateService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Certificate> baseRepository) : base(config, logger, mapper, baseRepository)
         {
         }
     }

@@ -24,6 +24,7 @@ namespace Repository.EF
         public string description { get; set; }
         public string logo { get; set; }
         public DateTime? start_time { get; set; }
+        public DateTime? create_time { get; set; }
 
         public virtual ICollection<Comment> Comment { get; set; }
         public virtual ICollection<Experience> Experience { get; set; }

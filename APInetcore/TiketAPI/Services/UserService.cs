@@ -5,11 +5,11 @@ using Repository.EF;
 using Repository.Interface;
 using Repository.Params;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.Interfaces;
 using TiketAPI.Models;
+using TiketAPI.Params;
 using Method = System.Reflection.MethodBase;
 
 
@@ -67,28 +67,29 @@ namespace TiketAPI.Services
                 return new ResponseService<ResponseLoginModel>(ex.Message);
             }
         }
-        public async Task<ResponseService<User>> Register(UserModel userModel)
+        public async Task<ResponseService<UserModel>> Register(UserParam userModel)
         {
             try
             {
                 _logger.LogInfo(Method.GetCurrentMethod().Name);
                 User userExist = await _userRepository.GetByEmailAsync(userModel.email);
-                if (userExist != null) return new ResponseService<User>("This mail is exist!").BadRequest();
+                if (userExist != null) return new ResponseService<UserModel>("This mail is exist!").BadRequest();
 
                 userModel.password = HashString.HashPasword(userModel.password);
 
-                User user = _mapper.Map<UserModel, User>(userModel);
-                user = CommonFunc.AddInfo<User>(user);
+                User user = _mapper.Map<UserParam, User>(userModel);
+                user = CommonFunc.UpdateInfo<User>(user);
                 await _userRepository.Create(user);
+                UserModel userView = _mapper.Map<User, UserModel>(user);
 
                 await EmailHelper.SendMail(_config, user.email, Constants.SUBJECT_REGISTER, Constants.CONTENT_REGISTER);
 
-                return new ResponseService<User>(user);
+                return new ResponseService<UserModel>(userView);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return new ResponseService<User>(ex.Message);
+                return new ResponseService<UserModel>(ex.Message);
             }
         }
         public async Task<ResponseService<bool>> ForgotPassword(string email)

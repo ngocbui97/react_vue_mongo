@@ -3,13 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Net.Http.Headers;
-using Repository.Repository;
 using System;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
-using TiketAPI.Extensions;
-using TiketAPI.Models;
-using TiketAPI.Services;
 using static TiketAPI.Constants;
 
 namespace TiketAPI.CustomAttributes
@@ -32,7 +28,7 @@ namespace TiketAPI.CustomAttributes
             if (!await Authorize(context.HttpContext)) context.Result = new UnauthorizedResult();
             return;
         }
-        private async Task<bool> Authorize(HttpContext actionContext)
+        private Task<bool> Authorize(HttpContext actionContext)
         {
             try
             {
@@ -44,14 +40,14 @@ namespace TiketAPI.CustomAttributes
                 // validate token
                 if (this.authorDefault == AUTHOR.TOKEN)
                 {
-                    if (CommonFunc.DecodeToken(token) != null) return true;
+                    if (CommonFunc.DecodeToken(token) != null) return Task.FromResult(true);
                 }
 
-                return false;
+                return Task.FromResult(false);
             }
             catch (Exception ex)
             {
-                return false;
+                return Task.FromResult(false);
             }
         }
     }

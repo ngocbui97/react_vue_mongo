@@ -8,7 +8,7 @@ namespace TiketAPI.Services
 {
     public class ConversationService : BaseService<Conversation>, IConversationService
     {
-        protected ConversationService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Conversation> baseRepository) : base(config, logger, mapper, baseRepository)
+        public ConversationService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<Conversation> baseRepository) : base(config, logger, mapper, baseRepository)
         {
         }
     }

@@ -1,32 +1,31 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Repository.CustomModels;
 using Repository.EF;
 using Repository.Params;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.CustomAttributes;
-using TiketAPI.Extensions;
 using TiketAPI.Interfaces;
 using TiketAPI.Models;
+using TiketAPI.Params;
 
 namespace TiketAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user")]
     [ApiController]
     public class UserController : BaseController
     {
-        private readonly IUserService _userService;
+        private readonly IUserService _service;
         public UserController(IUserService userService)
         {
-            _userService = userService;
+            _service = userService;
         }
 
         [Authorized]
         [HttpPost("update")]
-        public async Task<IActionResult> Update([FromBody] User param)
+        public async Task<IActionResult> Update([FromBody] UserModel param)
         {
-            ResponseService<User> response = await _userService.Update(param.id, param);
+            ResponseService<UserModel> response = await _service.Update<UserModel>(param.id, param);
             if (response.success) 
             {
                 return Ok(response);
@@ -41,7 +40,7 @@ namespace TiketAPI.Controllers
         [HttpPost("get-by-id")]
         public async Task<IActionResult> GetById([FromBody] ItemParam param)
         {
-            ResponseService<User> response = await _userService.GetById(param.id);
+            ResponseService<UserModel> response = await _service.GetById<UserModel>(param.id);
             if (response.success)
             {
                 return Ok(response);
@@ -56,7 +55,7 @@ namespace TiketAPI.Controllers
         [HttpPost("delete")]
         public async Task<IActionResult> Delete([FromBody] ItemParam param)
         {
-            ResponseService<bool> response = await _userService.Delete(param.id);
+            ResponseService<bool> response = await _service.Delete(param.id);
             if (response.success)
             {
                 return Ok(response);
@@ -68,10 +67,11 @@ namespace TiketAPI.Controllers
         }
 
         [Authorized]
-        [HttpPost("list-user")]
+        [HttpPost("get-list")]
         public async Task<IActionResult> GetList([FromBody] PagingParam param)
         {
-            ResponseService<ListResult<UserModel>> response = (await _userService.GetListAsync(param)).ConvertTo<User, UserModel>();
+            ResponseService<ListResult<UserModel>> response = (await _service.GetListAsync(param))
+                .ConvertToResponse<User, UserModel>();
             if (response.success)
             {
                 return Ok(response);
@@ -83,9 +83,9 @@ namespace TiketAPI.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserModel param)
+        public async Task<IActionResult> Register([FromBody] UserParam param)
         {
-            ResponseService<User> response = await _userService.Register(param);
+            ResponseService<UserModel> response = await _service.Register(param);
             if (response.success)
             {
                 return Ok(response);
@@ -100,7 +100,7 @@ namespace TiketAPI.Controllers
         [HttpPost("list-user-info")]
         public async Task<IActionResult> GetUserInfo([FromBody] SearchUserParam param)
         {
-            ResponseService<ListResult<UserInfo>> response = await _userService.GetUsersInfo(param);
+            ResponseService<ListResult<UserInfo>> response = await _service.GetUsersInfo(param);
             if (response.success)
             {
                 return Ok(response);
@@ -126,7 +126,7 @@ namespace TiketAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginParam param)
         {
-            ResponseService<ResponseLoginModel> response = await _userService.Login(param.email, param.password);
+            ResponseService<ResponseLoginModel> response = await _service.Login(param.email, param.password);
             if (response.success)
             {
                 return Ok(response);
@@ -140,7 +140,7 @@ namespace TiketAPI.Controllers
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] EmailParam param)
         {
-            ResponseService<bool> response = await _userService.ForgotPassword(param.email);
+            ResponseService<bool> response = await _service.ForgotPassword(param.email);
             if (response.success)
             {
                 return Ok(response);
@@ -154,7 +154,7 @@ namespace TiketAPI.Controllers
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPassParam param)
         {
-            ResponseService<bool> response = await _userService.ResetPassword(param.code,param.email, param.password);
+            ResponseService<bool> response = await _service.ResetPassword(param.code,param.email, param.password);
             if (response.success)
             {
                 return Ok(response);

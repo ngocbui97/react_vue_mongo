@@ -30,7 +30,7 @@ namespace Repository.EF
         public virtual DbSet<MapSkill> MapSkill { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
-        public virtual DbSet<TaskJob> Task_Job { get; set; }
+        public virtual DbSet<TaskJob> TaskJob { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -71,20 +71,22 @@ namespace Repository.EF
                     .HasForeignKey(d => d.company_id)
                     .HasConstraintName("FK_Comment_Company");
 
-                entity.HasOne(d => d.create_byNavigation)
-                    .WithMany(p => p.Comment)
-                    .HasForeignKey(d => d.create_by)
-                    .HasConstraintName("FK_Comment_User");
-
                 entity.HasOne(d => d.job_)
                     .WithMany(p => p.Comment)
                     .HasForeignKey(d => d.job_id)
                     .HasConstraintName("FK_Comment_Job");
+
+                entity.HasOne(d => d.user_)
+                    .WithMany(p => p.Comment)
+                    .HasForeignKey(d => d.user_id)
+                    .HasConstraintName("FK_Comment_User");
             });
 
             modelBuilder.Entity<Company>(entity =>
             {
                 entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
                 entity.Property(e => e.name).HasMaxLength(500);
 
@@ -97,9 +99,9 @@ namespace Repository.EF
 
                 entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.HasOne(d => d.create_byNavigation)
-                    .WithMany(p => p.Conversationcreate_byNavigation)
-                    .HasForeignKey(d => d.create_by)
+                entity.HasOne(d => d.from_user_)
+                    .WithMany(p => p.Conversationfrom_user_)
+                    .HasForeignKey(d => d.from_user_id)
                     .HasConstraintName("FK_Conversation_User1");
 
                 entity.HasOne(d => d.to_user_)
@@ -112,6 +114,8 @@ namespace Repository.EF
             {
                 entity.Property(e => e.id).ValueGeneratedNever();
 
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
                 entity.Property(e => e.end_time).HasColumnType("datetime");
 
                 entity.Property(e => e.school_name).HasMaxLength(200);
@@ -122,6 +126,8 @@ namespace Repository.EF
             modelBuilder.Entity<Experience>(entity =>
             {
                 entity.Property(e => e.id).ValueGeneratedNever();
+
+                entity.Property(e => e.create_time).HasColumnType("datetime");
 
                 entity.Property(e => e.end_time).HasColumnType("datetime");
 
@@ -193,12 +199,12 @@ namespace Repository.EF
 
                 entity.Property(e => e.create_time).HasColumnType("datetime");
 
-                entity.HasOne(d => d.user_)
+                entity.HasOne(d => d.job_)
                     .WithMany(p => p.MapJobUser)
-                    .HasForeignKey(d => d.user_id)
+                    .HasForeignKey(d => d.job_id)
                     .HasConstraintName("FK_MapJobUser_Job");
 
-                entity.HasOne(d => d.user_Navigation)
+                entity.HasOne(d => d.user_)
                     .WithMany(p => p.MapJobUser)
                     .HasForeignKey(d => d.user_id)
                     .HasConstraintName("FK_MapJobUser_User");
@@ -230,6 +236,8 @@ namespace Repository.EF
             {
                 entity.Property(e => e.id).ValueGeneratedNever();
 
+                entity.Property(e => e.create_time).HasColumnType("datetime");
+
                 entity.Property(e => e.name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -255,7 +263,7 @@ namespace Repository.EF
                 entity.Property(e => e.name).HasMaxLength(500);
 
                 entity.HasOne(d => d.job_)
-                    .WithMany(p => p.Task_Job)
+                    .WithMany(p => p.TaskJob)
                     .HasForeignKey(d => d.job_id)
                     .HasConstraintName("FK_Task_Job_Job");
             });
@@ -266,6 +274,8 @@ namespace Repository.EF
 
                 entity.Property(e => e.address).HasMaxLength(1000);
 
+                entity.Property(e => e.avatar).HasMaxLength(1000);
+
                 entity.Property(e => e.code)
                     .HasMaxLength(10)
                     .IsUnicode(false);
@@ -275,6 +285,8 @@ namespace Repository.EF
                     .IsUnicode(false);
 
                 entity.Property(e => e.create_time).HasColumnType("datetime");
+
+                entity.Property(e => e.current_position).HasMaxLength(1000);
 
                 entity.Property(e => e.email)
                     .HasMaxLength(50)
@@ -300,6 +312,10 @@ namespace Repository.EF
 
                 entity.Property(e => e.state)
                     .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.user_type)
+                    .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.company_)

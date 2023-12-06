@@ -1,9 +1,12 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Reflection;
+using TiketAPI.Extensions;
 
 namespace TiketAPI.Commons
 {
@@ -36,16 +39,21 @@ namespace TiketAPI.Commons
             var jwtSecurityToken = _tokenHandler.ReadJwtToken(token);
 
             var emailClaim = jwtSecurityToken.Claims.First(claim => claim.Type == "email");
+
+            SessionStore.Set<string>(Constants.KEY_SESSION_EMAIL, emailClaim.Value);
+
             if (emailClaim != null) return emailClaim.Value;
             return null;
         }
-        public static Object SetValue<T>(T obj, string propertyName, object ? value)
+        public static T SetValue<T>(T obj, string propertyName, object ? value)
         {
             try
             {
                 // these should be cached if possible
                 Type type = obj.GetType();
                 PropertyInfo pi = type.GetProperty(propertyName);
+
+                if (pi == null) return obj;
 
                 Type t = Nullable.GetUnderlyingType(pi.PropertyType) ?? pi.PropertyType;
 
@@ -59,12 +67,18 @@ namespace TiketAPI.Commons
 
             return obj;
         }
-        public static T AddInfo<T>(Object value, string by = null)
+        public static T UpdateInfo<T>(T value, bool isNewInfo = true)
         {
-            value = SetValue(value, "id", Guid.NewGuid());
-            value = SetValue(value, "create_time", DateTime.Now);
+            string by = SessionStore.Get<string>(Constants.KEY_SESSION_EMAIL);
+
+            if (isNewInfo)
+            {
+                value = SetValue(value, "id", Guid.NewGuid());
+                value = SetValue(value, "create_time", DateTime.Now);
+                value = SetValue(value, "create_by", by);
+            }
+
             value = SetValue(value, "modify_time", DateTime.Now);
-            value = SetValue(value, "create_by", by);
             value = SetValue(value, "modify_by", by);
 
             return (T)value;

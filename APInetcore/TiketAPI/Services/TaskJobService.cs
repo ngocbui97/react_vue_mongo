@@ -8,7 +8,7 @@ namespace TiketAPI.Services
 {
     public class TaskJobService : BaseService<TaskJob>, ITaskJobService
     {
-        protected TaskJobService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<TaskJob> baseRepository) : base(config, logger, mapper, baseRepository)
+        public TaskJobService(IConfiguration config, ILoggerManager logger, IMapper mapper, IRepository<TaskJob> baseRepository) : base(config, logger, mapper, baseRepository)
         {
         }
     }

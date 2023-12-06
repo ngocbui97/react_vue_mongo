@@ -14,7 +14,7 @@ namespace Repository.EF
         public Guid? user_id { get; set; }
         public DateTime? create_time { get; set; }
 
-        public virtual Job user_ { get; set; }
-        public virtual User user_Navigation { get; set; }
+        public virtual Job job_ { get; set; }
+        public virtual User user_ { get; set; }
     }
 }

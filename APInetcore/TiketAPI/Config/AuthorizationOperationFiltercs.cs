@@ -1,13 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.OpenApi.Any;
+﻿using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using NLog.Filters;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization;
 
 namespace TiketAPI.Config
 {
@@ -30,7 +24,7 @@ namespace TiketAPI.Config
 
             operation.Parameters.Add(new OpenApiParameter
             {
-                Name = "Bearer",
+                Name = "Authorization",
                 In = ParameterLocation.Header,
                 Description = "access token",
                 Required = false,

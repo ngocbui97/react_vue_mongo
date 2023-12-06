@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Repository.CustomModels
 {
@@ -30,5 +28,6 @@ namespace Repository.CustomModels
         public double? year_experience { get; set; }
         public string note { get; set; }
         public string link_cv { get; set; }
+        public string user_type { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Repository.EF
         {
             Certificate = new HashSet<Certificate>();
             Comment = new HashSet<Comment>();
-            Conversationcreate_byNavigation = new HashSet<Conversation>();
+            Conversationfrom_user_ = new HashSet<Conversation>();
             Conversationto_user_ = new HashSet<Conversation>();
             Experience = new HashSet<Experience>();
             MapJobUser = new HashSet<MapJobUser>();
@@ -43,13 +43,14 @@ namespace Repository.EF
         public double? year_experience { get; set; }
         public string note { get; set; }
         public string link_cv { get; set; }
+        public string user_type { get; set; }
 
         public virtual Company company_ { get; set; }
         public virtual Education education_ { get; set; }
         public virtual Role role_ { get; set; }
         public virtual ICollection<Certificate> Certificate { get; set; }
         public virtual ICollection<Comment> Comment { get; set; }
-        public virtual ICollection<Conversation> Conversationcreate_byNavigation { get; set; }
+        public virtual ICollection<Conversation> Conversationfrom_user_ { get; set; }
         public virtual ICollection<Conversation> Conversationto_user_ { get; set; }
         public virtual ICollection<Experience> Experience { get; set; }
         public virtual ICollection<MapJobUser> MapJobUser { get; set; }

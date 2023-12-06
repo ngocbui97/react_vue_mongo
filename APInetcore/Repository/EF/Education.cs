@@ -21,6 +21,7 @@ namespace Repository.EF
         public string department { get; set; }
         public double? score { get; set; }
         public bool? is_have_certificate { get; set; }
+        public DateTime? create_time { get; set; }
 
         public virtual ICollection<User> User { get; set; }
     }

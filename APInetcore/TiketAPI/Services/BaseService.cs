@@ -1,19 +1,13 @@
 ﻿using AutoMapper;
-using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Repository.CustomModels;
-using Repository.EF;
 using Repository.Interface;
-using Repository.Repository;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TiketAPI.Commons;
 using TiketAPI.Interfaces;
-using TiketAPI.Models;
 using Method = System.Reflection.MethodBase;
 
 namespace TiketAPI.Services
@@ -51,6 +45,22 @@ namespace TiketAPI.Services
                 return new ResponseService<T>(ex.Message);
             }
         }
+        public virtual async Task<ResponseService<V>> GetById<V>(Guid id)
+        {
+            try
+            {
+                _logger.LogInfo(Method.GetCurrentMethod().Name);
+
+                T item = await _baseRepository.GetById(id);
+
+                return new ResponseService<T>(item).ConvertToResponse<T, V>(); ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<V>(ex.Message);
+            }
+        }
         public virtual async Task<ResponseService<ListResult<T>>> GetListAsync(PagingParam param)
         {
             try
@@ -63,6 +73,20 @@ namespace TiketAPI.Services
             {
                 _logger.LogError(ex.Message);
                 return new ResponseService<ListResult<T>>(ex.Message);
+            }
+        }
+        public virtual async Task<ResponseService<ListResult<V>>> GetListAsync<V>(PagingParam param)
+        {
+            try
+            {
+                _logger.LogInfo(Method.GetCurrentMethod().Name);
+                ListResult<T> items = await _baseRepository.GetAll(param);
+                return new ResponseService<ListResult<T>>(items).ConvertToResponse<T,V>();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<ListResult<V>>(ex.Message);
             }
         }
         public virtual async Task<ResponseService<bool>> Delete(Guid id)
@@ -86,6 +110,7 @@ namespace TiketAPI.Services
             try
             {
                 _logger.LogInfo(Method.GetCurrentMethod().Name);
+                item = CommonFunc.UpdateInfo<T>(item);
                 await _baseRepository.Update(id, item);
                 return new ResponseService<T>(item);
             }
@@ -95,11 +120,31 @@ namespace TiketAPI.Services
                 return new ResponseService<T>(ex.Message);
             }
         }
+        public virtual async Task<ResponseService<V>> Update<V>(Guid id, Object item)
+        {
+            try
+            {
+                _logger.LogInfo(Method.GetCurrentMethod().Name);
+
+                T itemData = _mapper.Map<T>(item);
+                itemData = CommonFunc.UpdateInfo<T>(itemData, false);
+
+                await _baseRepository.Update(id, itemData);
+
+                return new ResponseService<T>(itemData).ConvertToResponse<T, V>();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<V>(ex.Message);
+            }
+        }
         public virtual async Task<ResponseService<T>> Create(T item)
         {
             try
             {
                 _logger.LogInfo(Method.GetCurrentMethod().Name);
+                item = CommonFunc.UpdateInfo<T>(item);
                 await _baseRepository.Create(item);
                 return new ResponseService<T>(item);
             }
@@ -107,6 +152,25 @@ namespace TiketAPI.Services
             {
                 _logger.LogError(ex.Message);
                 return new ResponseService<T>(ex.Message);
+            }
+        }
+        public virtual async Task<ResponseService<V>> Create<V>(Object item)
+        {
+            try
+            {
+                _logger.LogInfo(Method.GetCurrentMethod().Name);
+
+                T itemData = _mapper.Map<T>(item);
+                itemData = CommonFunc.UpdateInfo<T>(itemData);
+
+                await _baseRepository.Create(itemData);
+
+                return new ResponseService<T>(itemData).ConvertToResponse<T, V>();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return new ResponseService<V>(ex.Message);
             }
         }
     }

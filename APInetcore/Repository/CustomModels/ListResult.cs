@@ -1,7 +1,4 @@
-﻿using Repository.EF;
-using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
 
 namespace Repository.CustomModels
 {

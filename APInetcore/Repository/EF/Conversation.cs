@@ -13,10 +13,10 @@ namespace Repository.EF
         public Guid? to_user_id { get; set; }
         public string message { get; set; }
         public DateTime? create_time { get; set; }
-        public Guid? create_by { get; set; }
+        public Guid? from_user_id { get; set; }
         public bool? is_active { get; set; }
 
-        public virtual User create_byNavigation { get; set; }
+        public virtual User from_user_ { get; set; }
         public virtual User to_user_ { get; set; }
     }
 }

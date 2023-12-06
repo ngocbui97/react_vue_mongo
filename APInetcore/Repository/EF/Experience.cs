@@ -17,6 +17,7 @@ namespace Repository.EF
         public DateTime? start_time { get; set; }
         public DateTime? end_time { get; set; }
         public Guid? user_id { get; set; }
+        public DateTime? create_time { get; set; }
 
         public virtual Company company_ { get; set; }
         public virtual User user_ { get; set; }
