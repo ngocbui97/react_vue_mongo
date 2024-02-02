@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\ProjectFE\react_vue_mongo\APInetcore\JobVietAPI\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2024-02-02T01:50:50.0497193Z;True|2024-02-02T08:49:55.4017202+07:00;True|2024-02-01T16:24:01.1570148+07:00;True|2024-02-01T16:23:08.7955009+07:00;True|2024-02-01T11:34:14.3056499+07:00;True|2024-02-01T11:33:16.3588304+07:00;False|2024-02-01T10:03:47.9419693+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
